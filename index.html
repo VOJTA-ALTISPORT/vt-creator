@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VT Content Creator &mdash; Vojt&ecaron;ch Titlbach | UGC &amp; Video</title>
+    <meta name="description" content="Profesion&aacute;ln&iacute; UGC content creator. Tvorba autentick&eacute;ho video obsahu pro zna&ccaron;ky a e-shopy. Spolupr&aacute;ce s Altisport a dal&scaron;&iacute;mi.">
+    <meta property="og:title" content="VT Content Creator &mdash; Vojt&ecaron;ch Titlbach">
+    <meta property="og:description" content="UGC creator &bull; Video obsah pro zna&ccaron;ky &bull; Reels, TikTok, Stories">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand': { 50:'#f5f5f5', 100:'#e8e8e8', 200:'#d1d1d1', 800:'#1a1a1a', 900:'#0d0d0d' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .video-placeholder { aspect-ratio: 9/16; background: #111; border-radius: 12px; overflow: hidden; position: relative; }
+        .video-placeholder::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.6)); }
+        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 48px; height: 48px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .play-icon::after { content: ''; display: block; width: 0; height: 0; border-style: solid; border-width: 8px 0 8px 14px; border-color: transparent transparent transparent #111; margin-left: 3px; }
+        .stat-card { background: #111; border: 1px solid #222; border-radius: 12px; padding: 24px; text-align: center; }
+        .price-card { background: #111; border: 1px solid #222; border-radius: 16px; padding: 32px; transition: all 0.3s; }
+        .price-card:hover { border-color: #fff; transform: translateY(-4px); }
+        .price-card.featured { border-color: #fff; position: relative; }
+        .price-card.featured::before { content: 'Nejpopul\E1rn\011Bj\0161\00ED'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #fff; color: #000; font-size: 0.75rem; font-weight: 600; padding: 4px 16px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .embed-container { position: relative; width: 100%; max-width: 320px; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden; background: #111; }
+        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-in { animation: fadeInUp 0.6s ease-out forwards; }
+        .nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-brand-900 text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur bg-brand-900/80 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="img/logo.png" alt="VT" class="h-8 invert">
+                <span class="text-sm font-semibold tracking-wider uppercase">VT Creator</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+                <a href="#o-mne" class="hover:text-white transition">O mn&ecaron;</a>
+                <a href="#cenik" class="hover:text-white transition">Cen&iacute;k</a>
+                <a href="#spoluprace" class="hover:text-white transition">Spolupr&aacute;ce</a>
+                <a href="#kontakt" class="bg-white text-black px-5 py-2 rounded-full font-medium hover:bg-gray-200 transition">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-900 via-brand-900 to-black"></div>
+        <div class="relative z-10 text-center px-6 py-32">
+            <img src="img/logo.png" alt="VT Content Creator" class="h-28 mx-auto mb-8 invert animate-in">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4 animate-in" style="animation-delay:0.1s">
+                Vojt&ecaron;ch Titlbach
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-2 animate-in" style="animation-delay:0.2s">
+                UGC Content Creator &bull; Video Produkce
+            </p>
+            <p class="text-sm text-gray-500 mb-10 animate-in" style="animation-delay:0.3s">
+                Autentick&yacute; video obsah pro zna&ccaron;ky a e-shopy
+            </p>
+            <div class="flex gap-4 justify-center animate-in" style="animation-delay:0.4s">
+                <a href="#portfolio" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+                    Uk&aacute;zky pr&aacute;ce
+                </a>
+                <a href="#kontakt" class="border border-white/30 px-8 py-3 rounded-full font-medium hover:border-white transition">
+                    Spolupracujme
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="stat-card">
+                <div class="text-3xl font-bold">3+</div>
+                <div class="text-sm text-gray-500 mt-1">Roky zku&scaron;enost&iacute;</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-3xl font-bold">50+</div>
+                <div class="text-sm text-gray-500 mt-1">Vytvo&rcaron;en&yacute;ch vide&iacute;</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-3xl font-bold">7</div>
+                <div class="text-sm text-gray-500 mt-1">Trh&ucirc; v EU</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-3xl font-bold">100K+</div>
+                <div class="text-sm text-gray-500 mt-1">Zobrazen&iacute;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Video Showcase -->
+    <section id="portfolio" class="py-24 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">Portfolio</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Uk&aacute;zky tvorby</h2>
+                <p class="text-gray-400 mt-4 max-w-xl mx-auto">
+                    Autentick&aacute; videa, kter&aacute; prodávaj&iacute;. Od product review po lifestyle obsah.
+                </p>
+            </div>
+
+            <!-- Video Grid - Placeholders for embedded shorts -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="video-placeholder">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=700&fit=crop" alt="Sportovn&iacute; lifestyle">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-3 left-3 z-10 text-xs text-white/80">Altisport &bull; Lifestyle</div>
+                </div>
+                <div class="video-placeholder">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=700&fit=crop" alt="Product review">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-3 left-3 z-10 text-xs text-white/80">Altisport &bull; Product</div>
+                </div>
+                <div class="video-placeholder">
+                    <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=400&h=700&fit=crop" alt="Outdoor">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-3 left-3 z-10 text-xs text-white/80">Altisport &bull; Outdoor</div>
+                </div>
+                <div class="video-placeholder">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=700&fit=crop" alt="Fitness">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-3 left-3 z-10 text-xs text-white/80">Altisport &bull; Fitness</div>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-500 text-sm mt-8">
+                &#8594; Videa budou brzy napojena z Instagramu, TikToku a YouTube
+            </p>
+        </div>
+    </section>
+
+    <!-- O mn&ecaron; -->
+    <section id="o-mne" class="py-24">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">O mn&ecaron;</p>
+                <h2 class="text-3xl font-bold mb-6">Vojt&ecaron;ch Titlbach</h2>
+                <div class="space-y-4 text-gray-400 leading-relaxed">
+                    <p>
+                        Tvo&rcaron;&iacute;m autentick&yacute; video obsah pro zna&ccaron;ky a e-shopy. Specializuji se na UGC
+                        (User Generated Content) &mdash; videa, kter&aacute; p&ucirc;sob&iacute; p&rcaron;irozen&ecaron; a d&ucirc;v&ecaron;ryhodn&ecaron;,
+                        proto&zcaron;e pr&aacute;v&ecaron; takov&yacute; obsah dnes prodáv&aacute; nejl&eacute;pe.
+                    </p>
+                    <p>
+                        M&aacute;m zku&scaron;enosti z e-commerce prost&rcaron;ed&iacute; &mdash; pracuji jako COO ve spole&ccaron;nosti
+                        Altisport, kter&aacute; p&ucirc;sob&iacute; na 7 trz&iacute;ch v EU. D&iacute;ky tomu rozum&iacute;m, co zna&ccaron;ky
+                        pot&rcaron;ebuj&iacute; a jak&yacute; obsah funguje z pohledu konverz&iacute; a prodej&ucirc;.
+                    </p>
+                    <p>
+                        Ka&zcaron;d&eacute; video tvo&rcaron;&iacute;m s c&iacute;lem &mdash; nen&iacute; to jen hezk&yacute; obsah,
+                        ale n&aacute;stroj, kter&yacute; p&rcaron;in&aacute;&scaron;&iacute; v&yacute;sledky.
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-brand-800 rounded-xl p-5 border border-white/5">
+                    <div class="text-sm text-gray-500 mb-1">Specializace</div>
+                    <div class="text-white">UGC videa &bull; Product reviews &bull; Lifestyle &bull; Reels &bull; TikTok &bull; Stories</div>
+                </div>
+                <div class="bg-brand-800 rounded-xl p-5 border border-white/5">
+                    <div class="text-sm text-gray-500 mb-1">Form&aacute;ty</div>
+                    <div class="text-white">Instagram Reels &bull; TikTok &bull; YouTube Shorts &bull; Facebook Stories &bull; Product video</div>
+                </div>
+                <div class="bg-brand-800 rounded-xl p-5 border border-white/5">
+                    <div class="text-sm text-gray-500 mb-1">Zku&scaron;enosti</div>
+                    <div class="text-white">E-commerce &bull; Sportovn&iacute; m&oacute;da &bull; Outdoor &bull; Lifestyle &bull; 7 EU trh&ucirc;</div>
+                </div>
+                <div class="bg-brand-800 rounded-xl p-5 border border-white/5">
+                    <div class="text-sm text-gray-500 mb-1">Reference</div>
+                    <div class="text-white">Altisport &mdash; dlouhodob&aacute; spolupr&aacute;ce na video obsahu pro CZ, SK a dal&scaron;&iacute; trhy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spoluprace / Altisport -->
+    <section id="spoluprace" class="py-24 bg-black">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">Spolupr&aacute;ce</p>
+                <h2 class="text-3xl font-bold">Altisport</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Dlouhodob&aacute; spolupr&aacute;ce s &ccaron;eskou sportovn&iacute; zna&ccaron;kou p&ucirc;sob&iacute;c&iacute; na 7 trz&iacute;ch v Evrop&ecaron;.
+                    Tvorba UGC video obsahu pro soci&aacute;ln&iacute; s&iacute;t&ecaron; a e-shop &mdash; od product review po
+                    lifestyle kampan&ecaron;.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-brand-900 rounded-xl p-6 border border-white/5">
+                    <div class="text-2xl mb-3">&#127909;</div>
+                    <h3 class="font-semibold mb-2">Product videa</h3>
+                    <p class="text-sm text-gray-400">Kr&aacute;tk&aacute; videa p&rcaron;edstavuj&iacute;c&iacute; produkty z pr&eacute;miov&eacute; kolekce &mdash; autenticky, bez p&rcaron;ehr&aacute;v&aacute;n&iacute;.</p>
+                </div>
+                <div class="bg-brand-900 rounded-xl p-6 border border-white/5">
+                    <div class="text-2xl mb-3">&#127939;</div>
+                    <h3 class="font-semibold mb-2">Lifestyle obsah</h3>
+                    <p class="text-sm text-gray-400">Re&aacute;ln&eacute; situace, skute&ccaron;n&eacute; pou&zcaron;it&iacute; produkt&ucirc;. Obsah, kter&yacute; rezonuje s c&iacute;lovkou.</p>
+                </div>
+                <div class="bg-brand-900 rounded-xl p-6 border border-white/5">
+                    <div class="text-2xl mb-3">&#128200;</div>
+                    <h3 class="font-semibold mb-2">V&yacute;sledky</h3>
+                    <p class="text-sm text-gray-400">Obsah nasazovan&yacute; na Meta, Instagram a TikTok s prokazateln&yacute;m dopadem na engagement a prodeje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cen&iacute;k -->
+    <section id="cenik" class="py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">Cen&iacute;k</p>
+                <h2 class="text-3xl font-bold">Bal&iacute;&ccaron;ky spolupr&aacute;ce</h2>
+                <p class="text-gray-400 mt-4">Vyberte si, co v&aacute;m sed&iacute;. Ka&zcaron;d&yacute; bal&iacute;&ccaron;ek zahrnuje kompletní produkci.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Starter -->
+                <div class="price-card">
+                    <h3 class="text-lg font-semibold mb-1">Starter</h3>
+                    <p class="text-sm text-gray-500 mb-6">Ide&aacute;ln&iacute; na vyzkou&scaron;en&iacute;</p>
+                    <div class="text-3xl font-bold mb-6">5 000 K&ccaron; <span class="text-sm font-normal text-gray-500">/ video</span></div>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> 1 UGC video (15&ndash;60s)</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> N&aacute;pad + sc&eacute;n&aacute;&rcaron;</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Nat&aacute;&ccaron;en&iacute; + st&rcaron;ih</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> 1 revize</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Form&aacute;t: Reels / TikTok / Shorts</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center border border-white/20 py-3 rounded-full text-sm hover:border-white transition">Nez&aacute;vazn&ecaron; poptat</a>
+                </div>
+                <!-- Pro -->
+                <div class="price-card featured">
+                    <h3 class="text-lg font-semibold mb-1">Pro</h3>
+                    <p class="text-sm text-gray-500 mb-6">Pro pravideln&yacute; obsah</p>
+                    <div class="text-3xl font-bold mb-6">12 000 K&ccaron; <span class="text-sm font-normal text-gray-500">/ 3 videa</span></div>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> 3 UGC videa</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Content strategie</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Nat&aacute;&ccaron;en&iacute; + profesion&aacute;ln&iacute; st&rcaron;ih</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> 2 revize na video</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> V&scaron;echny form&aacute;ty + titulky</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Pou&zcaron;it&iacute; v ads</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center bg-white text-black py-3 rounded-full text-sm font-semibold hover:bg-gray-200 transition">Chci bal&iacute;&ccaron;ek Pro</a>
+                </div>
+                <!-- Partner -->
+                <div class="price-card">
+                    <h3 class="text-lg font-semibold mb-1">Partner</h3>
+                    <p class="text-sm text-gray-500 mb-6">Dlouhodob&aacute; spolupr&aacute;ce</p>
+                    <div class="text-3xl font-bold mb-6">Individu&aacute;ln&iacute;</div>
+                    <ul class="space-y-3 text-sm text-gray-400 mb-8">
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> 5+ vide&iacute; m&ecaron;s&iacute;&ccaron;n&ecaron;</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Kompletní content strategie</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Prioritn&iacute; zpracov&aacute;n&iacute;</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Neomezen&eacute; revize</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Analytics &amp; reporting</li>
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">&#10003;</span> Exkluzivita v segmentu</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center border border-white/20 py-3 rounded-full text-sm hover:border-white transition">Domluvit se</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jak to funguje -->
+    <section class="py-24 bg-black">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Jak spolupr&aacute;ce prob&iacute;h&aacute;</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-lg font-bold">1</div>
+                    <h3 class="font-semibold mb-2">Brief</h3>
+                    <p class="text-sm text-gray-400">&Rcaron;eknete mi, co pot&rcaron;ebujete. Jak&yacute; produkt, c&iacute;lovka, platforma.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-lg font-bold">2</div>
+                    <h3 class="font-semibold mb-2">Koncept</h3>
+                    <p class="text-sm text-gray-400">P&rcaron;iprav&iacute;m sc&eacute;n&aacute;&rcaron; a n&aacute;pad. Schv&aacute;l&iacute;te a jedem.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-lg font-bold">3</div>
+                    <h3 class="font-semibold mb-2">Produkce</h3>
+                    <p class="text-sm text-gray-400">Nat&aacute;&ccaron;en&iacute;, st&rcaron;ih, color grading, titulky. V&scaron;e v jedn&eacute;.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 text-lg font-bold">4</div>
+                    <h3 class="font-semibold mb-2">Dod&aacute;n&iacute;</h3>
+                    <p class="text-sm text-gray-400">Hotov&eacute; video ve v&scaron;ech form&aacute;tech. P&rcaron;ipraveno k nasazen&iacute;.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="py-24">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-500 uppercase tracking-widest mb-3">Kontakt</p>
+            <h2 class="text-3xl font-bold mb-4">Pojďme spolu tvo&rcaron;it</h2>
+            <p class="text-gray-400 mb-10">Napi&scaron;te mi a domluv&iacute;me se na spolupr&aacute;ci. R&aacute;d prob&eacute;h&aacute;m v&aacute;&scaron; projekt a navrhnu &rcaron;e&scaron;en&iacute; na m&iacute;ru.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="mailto:v.titlbach@gmail.com" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition flex items-center gap-2">
+                    &#9993; v.titlbach@gmail.com
+                </a>
+                <a href="https://www.instagram.com/" class="border border-white/30 px-8 py-3 rounded-full font-medium hover:border-white transition flex items-center gap-2">
+                    &#128247; Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="img/logo.png" alt="VT" class="h-6 invert">
+                <span class="text-sm text-gray-500">VT Content Creator &copy; 2026</span>
+            </div>
+            <div class="text-sm text-gray-600">
+                Vytvo&rcaron;eno s &#10084;&#65039; pomoc&iacute; AyAURA
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
