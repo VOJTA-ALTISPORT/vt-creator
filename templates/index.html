@@ -22,16 +22,28 @@
                         Tvorba profesionálních webů, AI konzultace a e-commerce strategie. Pomáhám firmám a živnostníkům růst v digitálním světě.
                     </p>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-4 reveal delay-2">
-                    <a href="{{ url_for('weby') }}" class="btn-primary btn-glow px-8 py-4 rounded-full text-center font-semibold text-lg">Chci web</a>
-                    <a href="{{ url_for('kontakt') }}" class="btn-secondary px-8 py-4 rounded-full text-center font-semibold text-lg">Kontaktujte mě</a>
+                <div class="flex flex-row gap-3 reveal delay-2">
+                    <a href="{{ url_for('weby') }}" class="btn-primary btn-glow px-6 py-3 rounded-full text-center font-semibold text-sm sm:text-base sm:px-8 sm:py-4">Chci web</a>
+                    <a href="{{ url_for('kontakt') }}" class="btn-secondary px-6 py-3 rounded-full text-center font-semibold text-sm sm:text-base sm:px-8 sm:py-4">Kontakt</a>
                 </div>
-                <!-- Rychlá tlačítka na mobilu -->
-                <div class="flex flex-wrap gap-2 mt-6 md:hidden reveal delay-3">
-                    <a href="{{ url_for('weby') }}" class="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs text-gray-300 hover:bg-white/10 transition">🌐 Tvorba webů</a>
-                    <a href="{{ url_for('ai_automatizace') }}" class="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs text-gray-300 hover:bg-white/10 transition">🤖 AI & Automatizace</a>
-                    <a href="{{ url_for('sluzby') }}" class="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs text-gray-300 hover:bg-white/10 transition">📊 Analytika</a>
-                    <a href="{{ url_for('ugc') }}" class="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs text-gray-300 hover:bg-white/10 transition">🎬 UGC Tvorba</a>
+                <!-- Rychlá navigace na mobilu -->
+                <div class="grid grid-cols-4 gap-2 mt-8 md:hidden reveal delay-3">
+                    <a href="{{ url_for('weby') }}" class="flex flex-col items-center gap-1.5 bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 rounded-xl py-3 px-2 hover:border-purple-500/30 transition">
+                        <span class="text-lg">🌐</span>
+                        <span class="text-[10px] text-gray-400 font-medium">Weby</span>
+                    </a>
+                    <a href="{{ url_for('ai_automatizace') }}" class="flex flex-col items-center gap-1.5 bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 rounded-xl py-3 px-2 hover:border-purple-500/30 transition">
+                        <span class="text-lg">🤖</span>
+                        <span class="text-[10px] text-gray-400 font-medium">AI</span>
+                    </a>
+                    <a href="{{ url_for('sluzby') }}" class="flex flex-col items-center gap-1.5 bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 rounded-xl py-3 px-2 hover:border-purple-500/30 transition">
+                        <span class="text-lg">📊</span>
+                        <span class="text-[10px] text-gray-400 font-medium">Analytika</span>
+                    </a>
+                    <a href="{{ url_for('ugc') }}" class="flex flex-col items-center gap-1.5 bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 rounded-xl py-3 px-2 hover:border-purple-500/30 transition">
+                        <span class="text-lg">🎬</span>
+                        <span class="text-[10px] text-gray-400 font-medium">UGC</span>
+                    </a>
                 </div>
             </div>
             <div class="reveal-right delay-2 flex justify-center lg:justify-end">
