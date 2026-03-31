@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGC Tvorba | Vojtech Titlbach</title>
+    <meta name="description" content="Profesionalni UGC content creator. Tvorba autentickeho video obsahu pro znacky a e-shopy. Spoluprace s Altisport a dalsimi.">
+    <meta property="og:title" content="UGC Tvorba | Vojtech Titlbach">
+    <meta property="og:description" content="UGC creator -- video obsah pro znacky. Reels, TikTok, Stories.">
+    <meta property="og:image" content="../img/logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand': { 50:'#f5f5f5', 100:'#e8e8e8', 200:'#d1d1d1', 800:'#1a1a1a', 900:'#0d0d0d', 950:'#080808' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-accent {
+            background: linear-gradient(135deg, #f0f0f0 0%, #c084fc 40%, #818cf8 60%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 60px -15px rgba(0,0,0,0.5), 0 0 30px -10px rgba(168,85,247,0.15);
+        }
+
+        .stat-card {
+            background: rgba(17,17,17,0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.08), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .stat-card:hover { border-color: rgba(168,85,247,0.3); transform: translateY(-4px); }
+        .stat-card:hover::before { opacity: 1; }
+
+        .price-card {
+            background: rgba(17,17,17,0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .price-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .price-card:hover {
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px -15px rgba(0,0,0,0.5);
+        }
+        .price-card:hover::before { opacity: 1; }
+        .price-card.featured {
+            border-color: rgba(168,85,247,0.4);
+            background: rgba(25,15,35,0.9);
+        }
+        .price-card.featured::before { opacity: 1; }
+        .price-card.featured::after {
+            content: 'Nejpopularnejsi';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 20px;
+            border-radius: 0 0 12px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 9/16;
+            background: #111;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .video-placeholder:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6);
+        }
+        .video-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+        }
+        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+        .video-placeholder:hover img { transform: scale(1.08); }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            width: 52px;
+            height: 52px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .video-placeholder:hover .play-icon {
+            transform: translate(-50%,-50%) scale(1.15);
+            box-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+        .play-icon::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 9px 0 9px 15px;
+            border-color: transparent transparent transparent #111;
+            margin-left: 3px;
+        }
+
+        .cta-pulse {
+            position: relative;
+            overflow: visible;
+        }
+        .cta-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #a855f7, #6366f1, #a855f7);
+            opacity: 0;
+            z-index: -1;
+            animation: ctaGlow 3s ease-in-out infinite;
+        }
+        @keyframes ctaGlow {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.04); }
+        }
+
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+        }
+        .ticker-content span {
+            display: inline-block;
+            padding: 0 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.12);
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .vt-watermark {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.02;
+            font-size: 28vw;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 12px;
+        }
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 2;
+            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.6);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item-tall { grid-row: span 2; }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.4s;
+        }
+        .gallery-item:hover .gallery-label { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item-tall { grid-row: span 1; }
+        }
+
+        .cursor-glow {
+            position: fixed;
+            pointer-events: none;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168,85,247,0.06) 0%, transparent 70%);
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s;
+            mix-blend-mode: screen;
+        }
+
+        .section-glow { position: relative; }
+        .section-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(168,85,247,0.3), transparent);
+        }
+
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-anim {
+            opacity: 0;
+            animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open { transform: translateY(0); }
+
+        .collab-logo {
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: all 0.4s;
+        }
+        .collab-logo:hover { opacity: 1; transform: scale(1.05); }
+
+        .process-step { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .process-step:hover { transform: translateY(-6px); }
+        .process-step:hover .step-number {
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: #fff;
+            box-shadow: 0 0 25px rgba(168,85,247,0.3);
+        }
+        .step-number { transition: all 0.4s; }
+
+        @keyframes scrollDot {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(6px); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-brand-950 text-white overflow-x-hidden">
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow hidden md:block" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur bg-brand-950/80 border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <img src="../img/logo.png" alt="VT" class="h-9 invert transition-transform group-hover:scale-110">
+                <span class="text-sm font-bold tracking-wider uppercase text-gray-300 group-hover:text-white transition">VT Creator</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="../index.html" class="nav-link hover:text-white transition">Domu</a>
+                <a href="../index.html#sluzby" class="nav-link hover:text-white transition">Sluzby</a>
+                <a href="#portfolio" class="nav-link hover:text-white transition">Portfolio</a>
+                <a href="#o-mne" class="nav-link hover:text-white transition">O mne</a>
+                <a href="#cenik" class="nav-link hover:text-white transition">Cenik</a>
+                <a href="#kontakt" class="cta-pulse bg-white text-black px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition text-xs uppercase tracking-wider">Kontakt</a>
+            </div>
+            <button class="md:hidden text-white" id="menuBtn" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu md:hidden fixed top-[65px] left-0 w-full bg-brand-950/95 nav-blur border-b border-white/5" id="mobileMenu">
+            <div class="flex flex-col items-center gap-6 py-8 text-gray-300">
+                <a href="../index.html" class="hover:text-white transition" onclick="closeMobileMenu()">Domu</a>
+                <a href="#portfolio" class="hover:text-white transition" onclick="closeMobileMenu()">Portfolio</a>
+                <a href="#o-mne" class="hover:text-white transition" onclick="closeMobileMenu()">O mne</a>
+                <a href="#cenik" class="hover:text-white transition" onclick="closeMobileMenu()">Cenik</a>
+                <a href="#kontakt" class="bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm" onclick="closeMobileMenu()">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0" id="heroBg">
+            <img src="../img/hero-bg.png" alt="" class="w-full h-full object-cover opacity-10" style="object-position: center; transform: scale(1.1);">
+        </div>
+        <div class="vt-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="opacity: 0.025;">
+            <img src="../img/logo.png" alt="" class="w-[50vw] max-w-[600px] invert" style="opacity: 0.4;">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-950/50 via-transparent to-brand-950"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-950/70 via-transparent to-brand-950/70"></div>
+
+        <div class="relative z-10 text-center px-6 py-32 max-w-5xl mx-auto">
+            <div class="mb-10 hero-anim" style="animation-delay: 0s;">
+                <div class="w-44 h-56 md:w-52 md:h-64 mx-auto rounded-2xl border-2 border-white/10 overflow-hidden bg-brand-800 shadow-2xl shadow-purple-500/10 ring-1 ring-white/5">
+                    <img src="../img/profile.jpg" alt="Vojtech Titlbach" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold text-white/30\'>VT</div>'">
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-5 hero-anim gradient-text" style="animation-delay: 0.15s;">
+                UGC Tvorba
+            </h1>
+            <div class="flex items-center justify-center gap-4 mb-4 hero-anim" style="animation-delay: 0.25s;">
+                <span class="w-10 h-px bg-gradient-to-r from-transparent to-white/30"></span>
+                <span class="text-xs uppercase tracking-[0.4em] text-gray-400 font-semibold">Content Creator</span>
+                <span class="w-10 h-px bg-gradient-to-l from-transparent to-white/30"></span>
+            </div>
+            <p class="text-lg md:text-xl text-gray-300 mb-2 hero-anim" style="animation-delay: 0.35s;">
+                UGC &bull; Video Produkce &bull; Brand Content
+            </p>
+            <p class="text-sm text-gray-500 mb-12 max-w-xl mx-auto hero-anim" style="animation-delay: 0.45s;">
+                Tvorim autenticky video obsah, ktery prodava.
+                Spoluprace se znackami na 7 trzich v EU.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center hero-anim" style="animation-delay: 0.55s;">
+                <a href="#portfolio" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
+                    Ukazky prace
+                </a>
+                <a href="#kontakt" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
+                    Spolupracujme
+                </a>
+            </div>
+            <div class="flex gap-8 justify-center mt-12 hero-anim" style="animation-delay: 0.65s;">
+                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="text-gray-500 hover:text-white transition text-sm font-medium">Instagram</a>
+                <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="text-gray-500 hover:text-white transition text-sm font-medium">LinkedIn</a>
+                <a href="mailto:v.titlbach@gmail.com" class="text-gray-500 hover:text-white transition text-sm font-medium">Email</a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hero-anim" style="animation-delay: 1s;">
+            <div class="w-5 h-8 rounded-full border border-white/20 flex justify-center pt-1.5">
+                <div class="w-1 h-2 bg-white/40 rounded-full" style="animation: scrollDot 2s ease-in-out infinite;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE TICKER ===== -->
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            <span>UGC</span><span>&bull;</span>
+            <span>REELS</span><span>&bull;</span>
+            <span>TIKTOK</span><span>&bull;</span>
+            <span>LIFESTYLE</span><span>&bull;</span>
+            <span>SPORT</span><span>&bull;</span>
+            <span>TRAVEL</span><span>&bull;</span>
+            <span>GASTRO</span><span>&bull;</span>
+            <span>BRAND CONTENT</span><span>&bull;</span>
+            <span>UGC</span><span>&bull;</span>
+            <span>REELS</span><span>&bull;</span>
+            <span>TIKTOK</span><span>&bull;</span>
+            <span>LIFESTYLE</span><span>&bull;</span>
+            <span>SPORT</span><span>&bull;</span>
+            <span>TRAVEL</span><span>&bull;</span>
+            <span>GASTRO</span><span>&bull;</span>
+            <span>BRAND CONTENT</span><span>&bull;</span>
+        </div>
+    </div>
+
+    <!-- ===== STATS ===== -->
+    <section class="py-20 relative section-glow">
+        <div class="vt-watermark -right-20 top-1/2 -translate-y-1/2 text-[15vw]">VT</div>
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-5 relative z-10">
+            <div class="stat-card reveal delay-1">
+                <div class="text-4xl font-black gradient-text-accent" data-count="3" data-suffix="+">0</div>
+                <div class="text-sm text-gray-500 mt-2">Roky zkusenosti</div>
+            </div>
+            <div class="stat-card reveal delay-2">
+                <div class="text-4xl font-black gradient-text-accent" data-count="50" data-suffix="+">0</div>
+                <div class="text-sm text-gray-500 mt-2">Vytvorenych videi</div>
+            </div>
+            <div class="stat-card reveal delay-3">
+                <div class="text-4xl font-black gradient-text-accent" data-count="7" data-suffix="">0</div>
+                <div class="text-sm text-gray-500 mt-2">Trhu v EU</div>
+            </div>
+            <div class="stat-card reveal delay-4">
+                <div class="text-4xl font-black gradient-text-accent" data-count="100" data-suffix="K+">0</div>
+                <div class="text-sm text-gray-500 mt-2">Zobrazeni</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio" class="py-28 bg-black relative overflow-hidden section-glow">
+        <div class="vt-watermark -left-10 bottom-10" style="font-size: 20vw; opacity: 0.015;">
+            <img src="../img/logo.png" alt="" class="w-[30vw] max-w-[400px] invert" style="opacity: 0.3;">
+        </div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Portfolio</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Ukazky tvorby</h2>
+                <p class="text-gray-400 mt-5 max-w-xl mx-auto reveal delay-2">
+                    Autenticka videa, ktera prodavaji. Od product review po lifestyle obsah.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="video-placeholder reveal-scale delay-1">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=700&fit=crop" alt="Sportovni lifestyle">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Lifestyle</div>
+                </div>
+                <div class="video-placeholder reveal-scale delay-2">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=700&fit=crop" alt="Product review">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Product</div>
+                </div>
+                <div class="video-placeholder reveal-scale delay-3">
+                    <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=400&h=700&fit=crop" alt="Outdoor">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Outdoor</div>
+                </div>
+                <div class="video-placeholder reveal-scale delay-4">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=700&fit=crop" alt="Fitness">
+                    <div class="play-icon"></div>
+                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Fitness</div>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-600 text-sm mt-10 reveal">
+                Videa budou brzy napojena z Instagramu, TikToku a YouTube
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== TICKER 2 ===== -->
+    <div class="ticker-wrap" style="border-color: rgba(255,255,255,0.03);">
+        <div class="ticker-content" style="animation-direction: reverse; animation-duration: 30s;">
+            <span>CONTENT CREATOR</span><span>&bull;</span>
+            <span>E-COMMERCE</span><span>&bull;</span>
+            <span>7 MARKETS</span><span>&bull;</span>
+            <span>ALTISPORT</span><span>&bull;</span>
+            <span>PRODUCT VIDEOS</span><span>&bull;</span>
+            <span>STORIES</span><span>&bull;</span>
+            <span>SHORTS</span><span>&bull;</span>
+            <span>INSTAGRAM</span><span>&bull;</span>
+            <span>CONTENT CREATOR</span><span>&bull;</span>
+            <span>E-COMMERCE</span><span>&bull;</span>
+            <span>7 MARKETS</span><span>&bull;</span>
+            <span>ALTISPORT</span><span>&bull;</span>
+            <span>PRODUCT VIDEOS</span><span>&bull;</span>
+            <span>STORIES</span><span>&bull;</span>
+            <span>SHORTS</span><span>&bull;</span>
+            <span>INSTAGRAM</span><span>&bull;</span>
+        </div>
+    </div>
+
+    <!-- ===== O MNE ===== -->
+    <section id="o-mne" class="py-28 relative overflow-hidden section-glow">
+        <div class="vt-watermark right-0 top-20" style="font-size: 18vw; opacity: 0.018;">VT</div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">O mne</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Vic nez jen kameraman</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-start mb-20">
+                <div class="reveal-left">
+                    <div class="space-y-5 text-gray-400 leading-relaxed text-[15px]">
+                        <p>
+                            Tvorim autenticky video obsah pro znacky a e-shopy. Specializuji se na UGC
+                            (User Generated Content) -- videa, ktera pusobi prirozene a duveryhodne,
+                            protoze prave takovy obsah dnes prodava nejlepe.
+                        </p>
+                        <p>
+                            Jako COO ve spolecnosti Altisport (7 trhu v EU, obrat 30M Kc/mesic)
+                            rozumim, co znacky potrebuji a jaky obsah funguje z pohledu konverzi
+                            a prodeju. Tenhle presah z e-commerce do tvorby obsahu je to, co me odlisuje
+                            od beznych creatoru.
+                        </p>
+                        <p>
+                            Kazde video tvorim s cilem -- neni to jen hezky obsah,
+                            ale nastroj, ktery prinasi vysledky. Vim, jaky obsah
+                            konvertuje, protoze to denne ridim na strane znacky.
+                        </p>
+                        <p>
+                            Sport, cestovani, gastro, lifestyle -- tvorim obsah pro jakykoliv typ
+                            spoluprace. A pokud to k vasi znacce sedi, rad prizvu
+                            i sveho Shiba Inu "Sushi".
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-4 reveal-right">
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Specializace</div>
+                        <div class="text-white text-[15px]">UGC videa &bull; Product reviews &bull; Lifestyle &bull; Reels &bull; TikTok &bull; Stories</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Sport & outdoor</div>
+                        <div class="text-white text-[15px]">Beh v dresu CR &bull; Cyklistika v horach &bull; Fitness &bull; Zavody &bull; Sportovni moda</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Cestovani & lifestyle</div>
+                        <div class="text-white text-[15px]">Budapest &bull; Evropska mesta &bull; Interiery &bull; Travel vlogy</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Gastro & food</div>
+                        <div class="text-white text-[15px]">Restaurace &bull; Recepty &bull; Food styling &bull; Gastro scena</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Bonus</div>
+                        <div class="text-white text-[15px]">Shiba Inu "Sushi" -- na prani i s pejskem na place</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Produkcni zazemi</div>
+                        <div class="text-white text-[15px]">Hezke interierove prostory &bull; Profesionalni technika</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="gallery-grid" style="grid-template-rows: 200px 200px;">
+                <div class="gallery-item gallery-item-tall reveal-scale delay-1" style="grid-row: span 2;">
+                    <img src="../img/photo-sport.jpg" alt="Zavod v dresu CR" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Sport &bull; Beh v dresu CR</div>
+                </div>
+                <div class="gallery-item reveal-scale delay-2">
+                    <img src="../img/photo-travel.jpg" alt="Budapest" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Travel &bull; Budapest</div>
+                </div>
+                <div class="gallery-item reveal-scale delay-3">
+                    <img src="../img/photo-cycling.jpg" alt="Cyklistika" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Sport &bull; Cyklistika</div>
+                </div>
+                <div class="gallery-item reveal-scale delay-4" style="grid-column: span 2;">
+                    <img src="../img/photo-sushi.jpg" alt="Sushi -- Shiba Inu" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Lifestyle &bull; Sushi the Shiba</div>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 text-sm mt-8 reveal">
+                Sport &bull; Cestovani &bull; Lifestyle &bull; Pejsky &bull; Jidlo -- kreativu prizpusobim vasim potrebam
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SPOLUPRACE / ALTISPORT ===== -->
+    <section class="py-28 bg-black relative overflow-hidden section-glow">
+        <div class="vt-watermark left-10 top-1/2 -translate-y-1/2" style="font-size: 22vw; opacity: 0.012;">VT</div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-6 reveal">Spoluprace</p>
+                <div class="reveal delay-1">
+                    <img src="../img/altisport-logo.jpg" alt="Altisport" class="h-14 md:h-16 mx-auto mb-6 collab-logo">
+                </div>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal delay-2 text-[15px] leading-relaxed">
+                    Dlouhodoba spoluprace s ceskou sportovni znackou pusobici na 7 trzich v Evrope.
+                    Tvorba UGC video obsahu pro socialni site a e-shop -- od product review po
+                    lifestyle kampane.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-1">
+                    <div class="text-3xl mb-4">&#127909;</div>
+                    <h3 class="font-bold mb-3 text-lg">Product videa</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Kratka videa predstavujici produkty z premiove kolekce -- autenticky, bez prehravani.</p>
+                </div>
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-2">
+                    <div class="text-3xl mb-4">&#127939;</div>
+                    <h3 class="font-bold mb-3 text-lg">Lifestyle obsah</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Realne situace, skutecne pouziti produktu. Obsah, ktery rezonuje s cilovkou.</p>
+                </div>
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3">
+                    <div class="text-3xl mb-4">&#128200;</div>
+                    <h3 class="font-bold mb-3 text-lg">Vysledky</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Obsah nasazovany na Meta, Instagram a TikTok s prokazatelnym dopadem na engagement a prodeje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== JAK PRACUJI ===== -->
+    <section class="py-28 relative overflow-hidden section-glow">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Proces</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Jak pracuji</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="process-step text-center reveal delay-1">
+                    <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">1</div>
+                    <h3 class="font-bold mb-2">Brief</h3>
+                    <p class="text-sm text-gray-500">Probereme vasi znacku, cilovku a co chcete sdelit.</p>
+                </div>
+                <div class="process-step text-center reveal delay-2">
+                    <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">2</div>
+                    <h3 class="font-bold mb-2">Scenar</h3>
+                    <p class="text-sm text-gray-500">Pripravim napad a scenar, ktery sedi k vasemu brandu.</p>
+                </div>
+                <div class="process-step text-center reveal delay-3">
+                    <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">3</div>
+                    <h3 class="font-bold mb-2">Nataceni</h3>
+                    <p class="text-sm text-gray-500">Profesionalni natoceni s durazem na autenticitu.</p>
+                </div>
+                <div class="process-step text-center reveal delay-4">
+                    <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">4</div>
+                    <h3 class="font-bold mb-2">Dodani</h3>
+                    <p class="text-sm text-gray-500">Strih, colour grading, hudba. Hotove video vcetne revizi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CENIK ===== -->
+    <section id="cenik" class="py-28 bg-black relative overflow-hidden section-glow">
+        <div class="vt-watermark -right-10 top-20" style="font-size: 16vw; opacity: 0.015;">VT</div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Cenik</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Balicky spoluprace</h2>
+                <p class="text-gray-400 mt-5 reveal delay-2">Vyberte si, co vam sedi. Kazdy balicek zahrnuje kompletni produkci.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Starter -->
+                <div class="price-card reveal delay-1">
+                    <h3 class="text-lg font-bold mb-1">Starter</h3>
+                    <p class="text-sm text-gray-500 mb-6">Idealni na vyzkouseni</p>
+                    <div class="text-4xl font-black mb-6 gradient-text-accent">5 000 Kc <span class="text-base font-normal text-gray-500" style="-webkit-text-fill-color: #6b7280;">/ video</span></div>
+                    <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 1 UGC video (15-60s)</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Napad + scenar</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Nataceni + strih</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 1 revize</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center border border-white/20 px-6 py-3 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm">Chci zacit</a>
+                </div>
+
+                <!-- Pro -->
+                <div class="price-card featured reveal delay-2">
+                    <h3 class="text-lg font-bold mb-1">Pro</h3>
+                    <p class="text-sm text-gray-500 mb-6">Pro pravidelny obsah</p>
+                    <div class="text-4xl font-black mb-6 gradient-text-accent">12 000 Kc <span class="text-base font-normal text-gray-500" style="-webkit-text-fill-color: #6b7280;">/ mesic</span></div>
+                    <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 3 UGC videa / mesic</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Obsahova strategie</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Nataceni + strih</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 2 revize / video</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Prioritni komunikace</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition text-sm">Vybrat Pro</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="price-card reveal delay-3">
+                    <h3 class="text-lg font-bold mb-1">Enterprise</h3>
+                    <p class="text-sm text-gray-500 mb-6">Kompletni obsahova spoluprace</p>
+                    <div class="text-4xl font-black mb-6 gradient-text-accent">Dle dohody</div>
+                    <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Neomezeny pocet videi</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Kompletni obsahova strategie</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Fotografie + video</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Neomezene revize</li>
+                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Dedicovany support</li>
+                    </ul>
+                    <a href="#kontakt" class="block text-center border border-white/20 px-6 py-3 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm">Domluvit schuzku</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KONTAKT ===== -->
+    <section id="kontakt" class="py-28 relative overflow-hidden section-glow">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Kontakt</p>
+            <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1 mb-6">Pojdme tvorit</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-10 reveal delay-2">
+                Mate projekt? Chcete UGC obsah pro vasi znacku? Ozvete se a probereme moznosti spoluprace.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal delay-3">
+                <a href="mailto:v.titlbach@gmail.com" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
+                    v.titlbach@gmail.com
+                </a>
+                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
+                    @vojtatitlbach
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="../img/logo.png" alt="VT" class="h-7 invert opacity-50">
+                    <span class="text-sm text-gray-500">Vojtech Titlbach</span>
+                </div>
+                <div class="flex items-center gap-8 text-sm text-gray-500">
+                    <a href="../index.html" class="hover:text-white transition">Domu</a>
+                    <a href="../index.html#sluzby" class="hover:text-white transition">Konzultace</a>
+                    <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+                    <a href="#kontakt" class="hover:text-white transition">Kontakt</a>
+                </div>
+                <div class="text-xs text-gray-600">
+                    Vytvoreno pomoci AyAURA
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Cursor glow
+        const glow = document.getElementById('cursorGlow');
+        if (glow) {
+            document.addEventListener('mousemove', e => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
+
+        // Counter animation
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count);
+                    const suffix = el.dataset.suffix || '';
+                    let current = 0;
+                    const step = Math.max(1, Math.floor(target / 40));
+                    const interval = setInterval(() => {
+                        current += step;
+                        if (current >= target) { current = target; clearInterval(interval); }
+                        el.textContent = current + suffix;
+                    }, 30);
+                    countObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+        }
+        function closeMobileMenu() {
+            const m = document.getElementById('mobileMenu');
+            if (m) m.classList.remove('open');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>

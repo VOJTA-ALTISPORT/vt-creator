@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VT Content Creator &mdash; Vojt&ecaron;ch Titlbach | UGC &amp; Video</title>
-    <meta name="description" content="Profesion&aacute;ln&iacute; UGC content creator. Tvorba autentick&eacute;ho video obsahu pro zna&ccaron;ky a e-shopy. Spolupr&aacute;ce s Altisport a dal&scaron;&iacute;mi.">
-    <meta property="og:title" content="VT Content Creator &mdash; Vojt&ecaron;ch Titlbach">
-    <meta property="og:description" content="UGC creator &bull; Video obsah pro zna&ccaron;ky &bull; Reels, TikTok, Stories">
+    <title>Vojtech Titlbach | AI & Digital Consultant</title>
+    <meta name="description" content="AI konzultace, e-commerce strategie a digitalni marketing. Pomaham firmam rust s vyuzitim AI a dat. 7 EU trhu, 30M+ Kc mesicne.">
+    <meta property="og:title" content="Vojtech Titlbach | AI & Digital Consultant">
+    <meta property="og:description" content="AI konzultace, e-commerce strategie, digitalni marketing. 7 EU trhu, 30M+ Kc/mesic.">
     <meta property="og:image" content="img/logo.png">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="img/logo.png">
@@ -28,7 +28,6 @@
         * { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
 
-        /* --- Gradient text --- */
         .gradient-text {
             background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 50%, #ffffff 100%);
             -webkit-background-clip: text;
@@ -42,16 +41,13 @@
             background-clip: text;
         }
 
-        /* --- Navigation --- */
         .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 
-        /* --- Hero parallax --- */
         .hero-parallax {
             will-change: transform;
             transition: transform 0.1s linear;
         }
 
-        /* --- Scroll animations --- */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -89,14 +85,13 @@
             transform: scale(1);
         }
 
-        /* --- Stagger delays --- */
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
         .delay-4 { transition-delay: 0.4s; }
         .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
 
-        /* --- Card hover effects --- */
         .card-hover {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid rgba(255,255,255,0.06);
@@ -107,7 +102,6 @@
             box-shadow: 0 20px 60px -15px rgba(0,0,0,0.5), 0 0 30px -10px rgba(168,85,247,0.15);
         }
 
-        /* --- Stat card --- */
         .stat-card {
             background: rgba(17,17,17,0.8);
             border: 1px solid rgba(255,255,255,0.06);
@@ -132,103 +126,6 @@
         }
         .stat-card:hover::before { opacity: 1; }
 
-        /* --- Price card --- */
-        .price-card {
-            background: rgba(17,17,17,0.8);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 20px;
-            padding: 36px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .price-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.06), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .price-card:hover {
-            border-color: rgba(255,255,255,0.2);
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px -15px rgba(0,0,0,0.5);
-        }
-        .price-card:hover::before { opacity: 1; }
-        .price-card.featured {
-            border-color: rgba(168,85,247,0.4);
-            background: rgba(25,15,35,0.9);
-        }
-        .price-card.featured::before { opacity: 1; }
-        .price-card.featured::after {
-            content: 'Nejpopul\E1rn\011Bj\0161\00ED';
-            position: absolute;
-            top: -1px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #a855f7, #6366f1);
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 5px 20px;
-            border-radius: 0 0 12px 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* --- Video placeholder --- */
-        .video-placeholder {
-            aspect-ratio: 9/16;
-            background: #111;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .video-placeholder:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6);
-        }
-        .video-placeholder::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
-        }
-        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-        .video-placeholder:hover img { transform: scale(1.08); }
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            z-index: 2;
-            width: 52px;
-            height: 52px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        .video-placeholder:hover .play-icon {
-            transform: translate(-50%,-50%) scale(1.15);
-            box-shadow: 0 0 30px rgba(255,255,255,0.3);
-        }
-        .play-icon::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 9px 0 9px 15px;
-            border-color: transparent transparent transparent #111;
-            margin-left: 3px;
-        }
-
-        /* --- CTA pulse --- */
         .cta-pulse {
             position: relative;
             overflow: visible;
@@ -248,7 +145,6 @@
             50% { opacity: 0.6; transform: scale(1.04); }
         }
 
-        /* --- Marquee ticker --- */
         .ticker-wrap {
             overflow: hidden;
             white-space: nowrap;
@@ -274,7 +170,6 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* --- Floating VT watermark --- */
         .vt-watermark {
             position: absolute;
             pointer-events: none;
@@ -287,63 +182,6 @@
             user-select: none;
         }
 
-        /* --- Masonry-like gallery --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto;
-            gap: 12px;
-        }
-        .gallery-item {
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .gallery-item:hover {
-            transform: scale(1.03);
-            z-index: 2;
-            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.6);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item-tall { grid-row: span 2; }
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-label {
-            position: absolute;
-            bottom: 16px;
-            left: 16px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: all 0.4s;
-        }
-        .gallery-item:hover .gallery-label {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .gallery-item-tall { grid-row: span 1; }
-        }
-
-        /* --- Cursor glow --- */
         .cursor-glow {
             position: fixed;
             pointer-events: none;
@@ -357,23 +195,6 @@
             mix-blend-mode: screen;
         }
 
-        /* --- Process step hover --- */
-        .process-step {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .process-step:hover {
-            transform: translateY(-6px);
-        }
-        .process-step:hover .step-number {
-            background: linear-gradient(135deg, #a855f7, #6366f1);
-            color: #fff;
-            box-shadow: 0 0 25px rgba(168,85,247,0.3);
-        }
-        .step-number {
-            transition: all 0.4s;
-        }
-
-        /* --- Section separator glow --- */
         .section-glow {
             position: relative;
         }
@@ -388,7 +209,6 @@
             background: linear-gradient(90deg, transparent, rgba(168,85,247,0.3), transparent);
         }
 
-        /* --- Hero entry animations --- */
         @keyframes heroFadeUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -398,7 +218,6 @@
             animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* --- Nav link underline --- */
         .nav-link {
             position: relative;
         }
@@ -416,7 +235,6 @@
             width: 100%;
         }
 
-        /* --- Mobile menu --- */
         .mobile-menu {
             transform: translateY(-100%);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -425,15 +243,38 @@
             transform: translateY(0);
         }
 
-        /* --- Collaboration logo --- */
-        .collab-logo {
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(168,85,247,0.15), rgba(99,102,241,0.15));
+            border: 1px solid rgba(168,85,247,0.2);
+            margin-bottom: 20px;
             transition: all 0.4s;
         }
-        .collab-logo:hover {
-            opacity: 1;
-            transform: scale(1.05);
+        .card-hover:hover .service-icon {
+            background: linear-gradient(135deg, rgba(168,85,247,0.3), rgba(99,102,241,0.3));
+            box-shadow: 0 0 20px rgba(168,85,247,0.2);
+        }
+
+        .testimonial-card {
+            background: rgba(17,17,17,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .testimonial-card:hover {
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+
+        @keyframes scrollDot {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(6px); opacity: 1; }
         }
     </style>
 </head>
@@ -447,29 +288,27 @@
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
                 <img src="img/logo.png" alt="VT" class="h-9 invert transition-transform group-hover:scale-110">
-                <span class="text-sm font-bold tracking-wider uppercase text-gray-300 group-hover:text-white transition">VT Creator</span>
+                <span class="text-sm font-bold tracking-wider uppercase text-gray-300 group-hover:text-white transition">Vojtech Titlbach</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-                <a href="#portfolio" class="nav-link hover:text-white transition">Portfolio</a>
-                <a href="#o-mne" class="nav-link hover:text-white transition">O mn&ecaron;</a>
-                <a href="#spoluprace" class="nav-link hover:text-white transition">Spolupr&aacute;ce</a>
-                <a href="#cenik" class="nav-link hover:text-white transition">Cen&iacute;k</a>
+                <a href="#sluzby" class="nav-link hover:text-white transition">Sluzby</a>
+                <a href="#o-mne" class="nav-link hover:text-white transition">O mne</a>
+                <a href="#reference" class="nav-link hover:text-white transition">Reference</a>
+                <a href="pages/ugc.html" class="nav-link hover:text-white transition">UGC Tvorba</a>
                 <a href="#kontakt" class="cta-pulse bg-white text-black px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition text-xs uppercase tracking-wider">Kontakt</a>
             </div>
-            <!-- Mobile hamburger -->
             <button class="md:hidden text-white" id="menuBtn" aria-label="Menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
                 </svg>
             </button>
         </div>
-        <!-- Mobile menu -->
         <div class="mobile-menu md:hidden fixed top-[65px] left-0 w-full bg-brand-950/95 nav-blur border-b border-white/5" id="mobileMenu">
             <div class="flex flex-col items-center gap-6 py-8 text-gray-300">
-                <a href="#portfolio" class="hover:text-white transition" onclick="closeMobileMenu()">Portfolio</a>
-                <a href="#o-mne" class="hover:text-white transition" onclick="closeMobileMenu()">O mn&ecaron;</a>
-                <a href="#spoluprace" class="hover:text-white transition" onclick="closeMobileMenu()">Spolupr&aacute;ce</a>
-                <a href="#cenik" class="hover:text-white transition" onclick="closeMobileMenu()">Cen&iacute;k</a>
+                <a href="#sluzby" class="hover:text-white transition" onclick="closeMobileMenu()">Sluzby</a>
+                <a href="#o-mne" class="hover:text-white transition" onclick="closeMobileMenu()">O mne</a>
+                <a href="#reference" class="hover:text-white transition" onclick="closeMobileMenu()">Reference</a>
+                <a href="pages/ugc.html" class="hover:text-white transition" onclick="closeMobileMenu()">UGC Tvorba</a>
                 <a href="#kontakt" class="bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm" onclick="closeMobileMenu()">Kontakt</a>
             </div>
         </div>
@@ -477,52 +316,53 @@
 
     <!-- ===== HERO ===== -->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Parallax BG -->
         <div class="absolute inset-0 hero-parallax" id="heroBg">
-            <img src="img/hero-bg.png" alt="" class="w-full h-full object-cover opacity-15" style="object-position: center; transform: scale(1.1);">
+            <img src="img/hero-bg.png" alt="" class="w-full h-full object-cover opacity-10" style="object-position: center; transform: scale(1.1);">
         </div>
-        <!-- VT Watermark in hero -->
         <div class="vt-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="opacity: 0.025;">
             <img src="img/logo.png" alt="" class="w-[50vw] max-w-[600px] invert" style="opacity: 0.4;">
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-brand-950/50 via-transparent to-brand-950"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-brand-950/70 via-transparent to-brand-950/70"></div>
 
-        <div class="relative z-10 text-center px-6 py-32 max-w-5xl mx-auto">
-            <!-- Profile Photo - Large Rounded Rectangle -->
-            <div class="mb-10 hero-anim" style="animation-delay: 0s;">
-                <div class="w-44 h-56 md:w-52 md:h-64 mx-auto rounded-2xl border-2 border-white/10 overflow-hidden bg-brand-800 shadow-2xl shadow-purple-500/10 ring-1 ring-white/5" id="profile-photo">
-                    <img src="img/profile.jpg" alt="Vojt&ecaron;ch Titlbach" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold text-white/30\'>VT</div>'">
+        <div class="relative z-10 px-6 py-32 max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-4 mb-6 hero-anim" style="animation-delay: 0s;">
+                        <span class="w-10 h-px bg-gradient-to-r from-transparent to-white/30"></span>
+                        <span class="text-xs uppercase tracking-[0.4em] text-gray-400 font-semibold">AI & Digital Consultant</span>
+                        <span class="w-10 h-px bg-gradient-to-l from-transparent to-white/30"></span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-5 hero-anim gradient-text" style="animation-delay: 0.15s;">
+                        Vojtech Titlbach
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-3 hero-anim" style="animation-delay: 0.3s;">
+                        Pomaham firmam rust s vyuzitim <span class="text-white font-semibold">umele inteligence</span>, dat a modernich digitalnich strategii.
+                    </p>
+                    <p class="text-sm text-gray-500 mb-10 max-w-lg hero-anim" style="animation-delay: 0.4s;">
+                        COO Altisport | 7 EU trhu | 30M+ Kc/mesic rizeny obrat | 3+ let AI automatizace
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start hero-anim" style="animation-delay: 0.5s;">
+                        <a href="#kontakt" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
+                            Nezavazna konzultace
+                        </a>
+                        <a href="#sluzby" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
+                            Co nabizim
+                        </a>
+                    </div>
+                    <div class="flex gap-8 justify-center md:justify-start mt-10 hero-anim" style="animation-delay: 0.6s;">
+                        <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="text-gray-500 hover:text-white transition text-sm font-medium">Instagram</a>
+                        <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="text-gray-500 hover:text-white transition text-sm font-medium">LinkedIn</a>
+                        <a href="mailto:v.titlbach@gmail.com" class="text-gray-500 hover:text-white transition text-sm font-medium">Email</a>
+                    </div>
                 </div>
-            </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-5 hero-anim gradient-text" style="animation-delay: 0.15s;">
-                Vojt&ecaron;ch Titlbach
-            </h1>
-            <div class="flex items-center justify-center gap-4 mb-4 hero-anim" style="animation-delay: 0.25s;">
-                <span class="w-10 h-px bg-gradient-to-r from-transparent to-white/30"></span>
-                <span class="text-xs uppercase tracking-[0.4em] text-gray-400 font-semibold">Content Creator</span>
-                <span class="w-10 h-px bg-gradient-to-l from-transparent to-white/30"></span>
-            </div>
-            <p class="text-lg md:text-xl text-gray-300 mb-2 hero-anim" style="animation-delay: 0.35s;">
-                UGC &bull; Video Produkce &bull; Brand Content
-            </p>
-            <p class="text-sm text-gray-500 mb-12 max-w-xl mx-auto hero-anim" style="animation-delay: 0.45s;">
-                Tvo&rcaron;&iacute;m autentick&yacute; video obsah, kter&yacute; prod&aacute;v&aacute;.
-                Spolupr&aacute;ce se zna&ccaron;kami na 7 trz&iacute;ch v EU.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center hero-anim" style="animation-delay: 0.55s;">
-                <a href="#portfolio" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
-                    Uk&aacute;zky pr&aacute;ce
-                </a>
-                <a href="#kontakt" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
-                    Spolupracujme
-                </a>
-            </div>
-            <!-- Social links -->
-            <div class="flex gap-8 justify-center mt-12 hero-anim" style="animation-delay: 0.65s;">
-                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="text-gray-500 hover:text-white transition text-sm font-medium">Instagram</a>
-                <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="text-gray-500 hover:text-white transition text-sm font-medium">LinkedIn</a>
-                <a href="mailto:v.titlbach@gmail.com" class="text-gray-500 hover:text-white transition text-sm font-medium">Email</a>
+                <!-- Right: Photo -->
+                <div class="flex justify-center hero-anim" style="animation-delay: 0.2s;">
+                    <div class="w-64 h-80 md:w-72 md:h-96 rounded-3xl border-2 border-white/10 overflow-hidden bg-brand-800 shadow-2xl shadow-purple-500/10 ring-1 ring-white/5">
+                        <img src="img/profile.jpg" alt="Vojtech Titlbach" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold text-white/30\'>VT</div>'">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -532,33 +372,27 @@
                 <div class="w-1 h-2 bg-white/40 rounded-full" style="animation: scrollDot 2s ease-in-out infinite;"></div>
             </div>
         </div>
-        <style>
-            @keyframes scrollDot {
-                0%, 100% { transform: translateY(0); opacity: 0.4; }
-                50% { transform: translateY(6px); opacity: 1; }
-            }
-        </style>
     </section>
 
     <!-- ===== MARQUEE TICKER ===== -->
     <div class="ticker-wrap">
         <div class="ticker-content">
-            <span>UGC</span><span>&bull;</span>
-            <span>REELS</span><span>&bull;</span>
-            <span>TIKTOK</span><span>&bull;</span>
-            <span>LIFESTYLE</span><span>&bull;</span>
-            <span>SPORT</span><span>&bull;</span>
-            <span>TRAVEL</span><span>&bull;</span>
-            <span>GASTRO</span><span>&bull;</span>
-            <span>BRAND CONTENT</span><span>&bull;</span>
-            <span>UGC</span><span>&bull;</span>
-            <span>REELS</span><span>&bull;</span>
-            <span>TIKTOK</span><span>&bull;</span>
-            <span>LIFESTYLE</span><span>&bull;</span>
-            <span>SPORT</span><span>&bull;</span>
-            <span>TRAVEL</span><span>&bull;</span>
-            <span>GASTRO</span><span>&bull;</span>
-            <span>BRAND CONTENT</span><span>&bull;</span>
+            <span>AI AUTOMATIZACE</span><span>&bull;</span>
+            <span>E-COMMERCE</span><span>&bull;</span>
+            <span>GOOGLE ADS</span><span>&bull;</span>
+            <span>META ADS</span><span>&bull;</span>
+            <span>GA4</span><span>&bull;</span>
+            <span>CHATBOTI</span><span>&bull;</span>
+            <span>DATA ANALYTICS</span><span>&bull;</span>
+            <span>7 EU TRHU</span><span>&bull;</span>
+            <span>AI AUTOMATIZACE</span><span>&bull;</span>
+            <span>E-COMMERCE</span><span>&bull;</span>
+            <span>GOOGLE ADS</span><span>&bull;</span>
+            <span>META ADS</span><span>&bull;</span>
+            <span>GA4</span><span>&bull;</span>
+            <span>CHATBOTI</span><span>&bull;</span>
+            <span>DATA ANALYTICS</span><span>&bull;</span>
+            <span>7 EU TRHU</span><span>&bull;</span>
         </div>
     </div>
 
@@ -567,460 +401,418 @@
         <div class="vt-watermark -right-20 top-1/2 -translate-y-1/2 text-[15vw]">VT</div>
         <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-5 relative z-10">
             <div class="stat-card reveal delay-1">
-                <div class="text-4xl font-black gradient-text-accent" data-count="3" data-suffix="+">0</div>
-                <div class="text-sm text-gray-500 mt-2">Roky zku&scaron;enost&iacute;</div>
+                <div class="text-4xl font-black gradient-text-accent" data-count="7" data-suffix="">0</div>
+                <div class="text-sm text-gray-500 mt-2">EU trhu</div>
             </div>
             <div class="stat-card reveal delay-2">
-                <div class="text-4xl font-black gradient-text-accent" data-count="50" data-suffix="+">0</div>
-                <div class="text-sm text-gray-500 mt-2">Vytvo&rcaron;en&yacute;ch vide&iacute;</div>
+                <div class="text-4xl font-black gradient-text-accent" data-count="30" data-suffix="M+">0</div>
+                <div class="text-sm text-gray-500 mt-2">Kc/mesic rizeny obrat</div>
             </div>
             <div class="stat-card reveal delay-3">
-                <div class="text-4xl font-black gradient-text-accent" data-count="7" data-suffix="">0</div>
-                <div class="text-sm text-gray-500 mt-2">Trh&ucirc; v EU</div>
+                <div class="text-4xl font-black gradient-text-accent" data-count="3" data-suffix="+">0</div>
+                <div class="text-sm text-gray-500 mt-2">Let AI automatizace</div>
             </div>
             <div class="stat-card reveal delay-4">
                 <div class="text-4xl font-black gradient-text-accent" data-count="100" data-suffix="K+">0</div>
-                <div class="text-sm text-gray-500 mt-2">Zobrazen&iacute;</div>
+                <div class="text-sm text-gray-500 mt-2">Analyzovanych produktu</div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PORTFOLIO ===== -->
-    <section id="portfolio" class="py-28 bg-black relative overflow-hidden section-glow">
+    <!-- ===== SLUZBY ===== -->
+    <section id="sluzby" class="py-28 bg-black relative overflow-hidden section-glow">
         <div class="vt-watermark -left-10 bottom-10" style="font-size: 20vw; opacity: 0.015;">
             <img src="img/logo.png" alt="" class="w-[30vw] max-w-[400px] invert" style="opacity: 0.3;">
         </div>
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Portfolio</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Uk&aacute;zky tvorby</h2>
-                <p class="text-gray-400 mt-5 max-w-xl mx-auto reveal delay-2">
-                    Autentick&aacute; videa, kter&aacute; prod&aacute;vaj&iacute;. Od product review po lifestyle obsah.
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Co nabizim</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Sluzby</h2>
+                <p class="text-gray-400 mt-5 max-w-2xl mx-auto reveal delay-2">
+                    Kombinuji hands-on zkusenosti z rizeni e-commerce na 7 trzich s hlubokou znalosti AI nastroju a digitalnich technologii.
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div class="video-placeholder reveal-scale delay-1">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=700&fit=crop" alt="Sportovn&iacute; lifestyle">
-                    <div class="play-icon"></div>
-                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Lifestyle</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. AI Konzultace -->
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-1">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11h3a3 3 0 0 1 3 3v1.5a2.5 2.5 0 0 1-5 0V14H9v1.5a2.5 2.5 0 0 1-5 0V14a3 3 0 0 1 3-3h3V9.5A4 4 0 0 1 12 2z"/>
+                            <circle cx="12" cy="6" r="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-3 text-lg">AI Konzultace & Automatizace</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Implementace AI nastroju do firemniho prostredi. Automatizace procesu, chatboti, AI asistenti, workflow optimalizace. Zkusenosti z vlastniho AI systemu "Aura".</p>
                 </div>
-                <div class="video-placeholder reveal-scale delay-2">
-                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=700&fit=crop" alt="Product review">
-                    <div class="play-icon"></div>
-                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Product</div>
+
+                <!-- 2. E-commerce Strategie -->
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-2">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-3 text-lg">E-commerce Strategie</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Optimalizace e-shopu, pricing strategie, konverzni optimalizace, expanze na nove trhy. Prakticke zkusenosti z rizeni Altisport na 7 trzich v EU.</p>
                 </div>
-                <div class="video-placeholder reveal-scale delay-3">
-                    <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=400&h=700&fit=crop" alt="Outdoor">
-                    <div class="play-icon"></div>
-                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Outdoor</div>
+
+                <!-- 3. Digitalni Marketing -->
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                            <line x1="12" y1="2" x2="12" y2="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-3 text-lg">Digitalni Marketing</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Google Ads, Meta Ads, Sklik, Bing Ads. Performance marketing, SEO, multi-channel strategie. Sprava kampani na 7 trzich s meritelnym ROI.</p>
                 </div>
-                <div class="video-placeholder reveal-scale delay-4">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=700&fit=crop" alt="Fitness">
-                    <div class="play-icon"></div>
-                    <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Fitness</div>
+
+                <!-- 4. IT Reseni -->
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-4">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-3 text-lg">IT Reseni</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Systemova integrace, API napojeni, vlastni dashboardy a reporting. Automatizovane datove pipeline, monitoring a alerting.</p>
+                </div>
+
+                <!-- 5. Data & Analytics -->
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-5">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-3 text-lg">Data & Analytics</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">GA4, Power BI, datova analyza, KPI monitoring. Nastaveni mereni, attributnich modelu a automatizovaneho reportingu.</p>
+                </div>
+
+                <!-- 6. Obsahova Strategie -->
+                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-6">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold mb-3 text-lg">Obsahova Strategie</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">UGC tvorba, socialni site, brand building. Obsahova strategie pro e-commerce s durazem na autenticitu a meritelne vysledky.</p>
                 </div>
             </div>
-
-            <p class="text-center text-gray-600 text-sm mt-10 reveal">
-                &#8594; Videa budou brzy napojena z Instagramu, TikToku a YouTube
-            </p>
         </div>
     </section>
 
     <!-- ===== TICKER 2 ===== -->
     <div class="ticker-wrap" style="border-color: rgba(255,255,255,0.03);">
         <div class="ticker-content" style="animation-direction: reverse; animation-duration: 30s;">
-            <span>CONTENT CREATOR</span><span>&bull;</span>
-            <span>E-COMMERCE</span><span>&bull;</span>
-            <span>7 MARKETS</span><span>&bull;</span>
-            <span>ALTISPORT</span><span>&bull;</span>
-            <span>PRODUCT VIDEOS</span><span>&bull;</span>
-            <span>STORIES</span><span>&bull;</span>
-            <span>SHORTS</span><span>&bull;</span>
-            <span>INSTAGRAM</span><span>&bull;</span>
-            <span>CONTENT CREATOR</span><span>&bull;</span>
-            <span>E-COMMERCE</span><span>&bull;</span>
-            <span>7 MARKETS</span><span>&bull;</span>
-            <span>ALTISPORT</span><span>&bull;</span>
-            <span>PRODUCT VIDEOS</span><span>&bull;</span>
-            <span>STORIES</span><span>&bull;</span>
-            <span>SHORTS</span><span>&bull;</span>
-            <span>INSTAGRAM</span><span>&bull;</span>
+            <span>AI FIRST</span><span>&bull;</span>
+            <span>DATA DRIVEN</span><span>&bull;</span>
+            <span>HANDS-ON</span><span>&bull;</span>
+            <span>7 COUNTRIES</span><span>&bull;</span>
+            <span>ALTISPORT COO</span><span>&bull;</span>
+            <span>FULL STACK</span><span>&bull;</span>
+            <span>PERFORMANCE</span><span>&bull;</span>
+            <span>SCALE UP</span><span>&bull;</span>
+            <span>AI FIRST</span><span>&bull;</span>
+            <span>DATA DRIVEN</span><span>&bull;</span>
+            <span>HANDS-ON</span><span>&bull;</span>
+            <span>7 COUNTRIES</span><span>&bull;</span>
+            <span>ALTISPORT COO</span><span>&bull;</span>
+            <span>FULL STACK</span><span>&bull;</span>
+            <span>PERFORMANCE</span><span>&bull;</span>
+            <span>SCALE UP</span><span>&bull;</span>
         </div>
     </div>
 
-    <!-- ===== O MNE ===== -->
+    <!-- ===== O MNE / WHY ME ===== -->
     <section id="o-mne" class="py-28 relative overflow-hidden section-glow">
         <div class="vt-watermark right-0 top-20" style="font-size: 18vw; opacity: 0.018;">VT</div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">O mn&ecaron;</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">V&iacute;c ne&zcaron; jen kameraman</h2>
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">O mne</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Proc prave ja</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-16 items-start mb-20">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
                 <div class="reveal-left">
                     <div class="space-y-5 text-gray-400 leading-relaxed text-[15px]">
                         <p>
-                            Tvo&rcaron;&iacute;m autentick&yacute; video obsah pro zna&ccaron;ky a e-shopy. Specializuji se na UGC
-                            (User Generated Content) &mdash; videa, kter&aacute; p&ucirc;sob&iacute; p&rcaron;irozen&ecaron; a d&ucirc;v&ecaron;ryhodn&ecaron;,
-                            proto&zcaron;e pr&aacute;v&ecaron; takov&yacute; obsah dnes prod&aacute;v&aacute; nejl&eacute;pe.
+                            Nejsem teoretik. Jako COO spolecnosti Altisport denne ridim e-commerce operace na 7 trzich
+                            v Evrope s obratem pres 30 milionu korun mesicne. Vim, co funguje v praxi, protoze to sam provozuji.
                         </p>
                         <p>
-                            Jako COO ve spole&ccaron;nosti Altisport (7 trh&ucirc; v EU, obrat 30M K&ccaron;/m&ecaron;s&iacute;c)
-                            rozum&iacute;m, co zna&ccaron;ky pot&rcaron;ebuj&iacute; a jak&yacute; obsah funguje z pohledu konverz&iacute;
-                            a prodej&ucirc;. Tenhle p&rcaron;esah z e-commerce do tvorby obsahu je to, co m&ecaron; odli&scaron;uje
-                            od b&ecaron;&zcaron;n&yacute;ch creator&ucirc;.
+                            Pred 3 lety jsem zacal budovat vlastni AI system "Aura" -- kompletniho digitalniho asistenta,
+                            ktery automatizuje reporting, monitoring reklam, datove analyzy a komunikaci. Neni to hracka,
+                            ale produkcni system, ktery denne spravuje tisice datovych bodu.
                         </p>
                         <p>
-                            Ka&zcaron;d&eacute; video tvo&rcaron;&iacute;m s c&iacute;lem &mdash; nen&iacute; to jen hezk&yacute; obsah,
-                            ale n&aacute;stroj, kter&yacute; p&rcaron;in&aacute;&scaron;&iacute; v&yacute;sledky. V&iacute;m, jak&yacute; obsah
-                            konvertuje, proto&zcaron;e to denn&ecaron; &rcaron;&iacute;d&iacute;m na stran&ecaron; zna&ccaron;ky.
+                            Tento hands-on pristup k AI a technologiim prenosimu i do konzultaci. Neradim, co byste mohli delat.
+                            Ukazuji, jak to udelat, a pomahm to implementovat.
                         </p>
                         <p>
-                            Sport, cestov&aacute;n&iacute;, gastro, lifestyle &mdash; tvo&rcaron;&iacute;m obsah pro jak&yacute;koliv typ
-                            spolupr&aacute;ce. A pokud to k va&scaron;&iacute; zna&ccaron;ce sed&iacute;, r&aacute;d p&rcaron;izvu
-                            i sv&eacute;ho Shiba Inu &bdquo;Sushi&ldquo;.
+                            Moje unikatni kombinace: hluboky e-commerce know-how + prakticke AI dovednosti + data-driven pristup.
+                            At chcete automatizovat procesy, expandovat na nove trhy nebo zefektivnit marketing --
+                            vim, jak na to.
                         </p>
                     </div>
                 </div>
                 <div class="space-y-4 reveal-right">
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
-                        <div class="text-sm text-gray-500 mb-1.5">&#127909; Specializace</div>
-                        <div class="text-white text-[15px]">UGC videa &bull; Product reviews &bull; Lifestyle &bull; Reels &bull; TikTok &bull; Stories</div>
+                        <div class="text-sm text-gray-500 mb-1.5">Pozice</div>
+                        <div class="text-white text-[15px]">COO Altisport -- ceska sportovni e-commerce znacka, 7 EU trhu</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
-                        <div class="text-sm text-gray-500 mb-1.5">&#127939; Sport &amp; outdoor</div>
-                        <div class="text-white text-[15px]">B&ecaron;h v dresu &Ccaron;R &bull; Cyklistika v hor&aacute;ch &bull; Fitness &bull; Z&aacute;vody &bull; Sportovn&iacute; m&oacute;da</div>
+                        <div class="text-sm text-gray-500 mb-1.5">AI & Technologie</div>
+                        <div class="text-white text-[15px]">Vlastni AI system "Aura" -- Claude, Python, API integrace, automatizace</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
-                        <div class="text-sm text-gray-500 mb-1.5">&#9992;&#65039; Cestov&aacute;n&iacute; &amp; lifestyle</div>
-                        <div class="text-white text-[15px]">Budape&scaron;&tcaron; &bull; Evropsk&aacute; m&ecaron;sta &bull; Interi&eacute;ry &bull; Travel vlogy</div>
+                        <div class="text-sm text-gray-500 mb-1.5">Marketing</div>
+                        <div class="text-white text-[15px]">Google Ads, Meta Ads, Sklik, Bing Ads -- 7 trhu, multi-channel</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
-                        <div class="text-sm text-gray-500 mb-1.5">&#127860; Gastro &amp; food</div>
-                        <div class="text-white text-[15px]">Restaurace &bull; Recepty &bull; Food styling &bull; Gastro sc&eacute;na</div>
+                        <div class="text-sm text-gray-500 mb-1.5">Data</div>
+                        <div class="text-white text-[15px]">GA4, Power BI, Python analytics, vlastni dashboardy a reporting</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
-                        <div class="text-sm text-gray-500 mb-1.5">&#128054; Bonus</div>
-                        <div class="text-white text-[15px]">Shiba Inu &bdquo;Sushi&ldquo; &mdash; na p&rcaron;&aacute;n&iacute; i s pejskem na place</div>
+                        <div class="text-sm text-gray-500 mb-1.5">E-commerce</div>
+                        <div class="text-white text-[15px]">Pricing, feed management, konverzni optimalizace, mezinarodni expanze</div>
                     </div>
-                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
-                        <div class="text-sm text-gray-500 mb-1.5">&#127968; Produk&ccaron;n&iacute; z&aacute;zem&iacute;</div>
-                        <div class="text-white text-[15px]">Hezk&eacute; interi&eacute;rov&eacute; prostory &bull; Profesion&aacute;ln&iacute; technika</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REFERENCE ===== -->
+    <section id="reference" class="py-28 bg-black relative overflow-hidden section-glow">
+        <div class="vt-watermark left-10 top-1/2 -translate-y-1/2" style="font-size: 22vw; opacity: 0.012;">VT</div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Reference</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Co rikaji klienti</h2>
+                <p class="text-gray-400 mt-5 max-w-xl mx-auto reveal delay-2">
+                    Spolupracuji s firmami, ktere chteji vyuzit potencial AI a dat pro realne vysledky.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="testimonial-card reveal delay-1">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-[15px] leading-relaxed mb-6 italic">
+                        "Vojta nam pomohl implementovat AI do naseho marketingoveho workflow. Cas straveny manualnim reportingem jsme snizili o 80%. Navic jsme ziskali prehled o datech, ktery jsme predtim nemeli."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center text-sm font-bold text-gray-400">MK</div>
+                        <div>
+                            <div class="text-sm font-semibold">Martin K.</div>
+                            <div class="text-xs text-gray-500">E-commerce Manager</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card reveal delay-2">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-[15px] leading-relaxed mb-6 italic">
+                        "Profesionalni pristup k e-commerce strategii. Vojta nam pomohl s expanzi na slovensky trh a nastavil Google Ads kampane, ktere prinaseji meritelne vysledky od prvniho mesice."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center text-sm font-bold text-gray-400">PH</div>
+                        <div>
+                            <div class="text-sm font-semibold">Petra H.</div>
+                            <div class="text-xs text-gray-500">Majitelka e-shopu</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Masonry Photo Gallery -->
-            <div class="gallery-grid" style="grid-template-rows: 200px 200px;">
-                <div class="gallery-item gallery-item-tall reveal-scale delay-1" style="grid-row: span 2;">
-                    <img src="img/photo-sport.jpg" alt="Z&aacute;vod v dresu &Ccaron;R" style="height: 100%;">
-                    <div class="gallery-overlay"></div>
-                    <div class="gallery-label">Sport &bull; B&ecaron;h v dresu &Ccaron;R</div>
-                </div>
-                <div class="gallery-item reveal-scale delay-2">
-                    <img src="img/photo-travel.jpg" alt="Budape&scaron;&tcaron;" style="height: 100%;">
-                    <div class="gallery-overlay"></div>
-                    <div class="gallery-label">Travel &bull; Budape&scaron;&tcaron;</div>
-                </div>
-                <div class="gallery-item reveal-scale delay-3">
-                    <img src="img/photo-cycling.jpg" alt="Cyklistika" style="height: 100%;">
-                    <div class="gallery-overlay"></div>
-                    <div class="gallery-label">Sport &bull; Cyklistika</div>
-                </div>
-                <div class="gallery-item reveal-scale delay-4" style="grid-column: span 2;">
-                    <img src="img/photo-sushi.jpg" alt="Sushi &mdash; Shiba Inu" style="height: 100%;">
-                    <div class="gallery-overlay"></div>
-                    <div class="gallery-label">Lifestyle &bull; Sushi the Shiba</div>
-                </div>
-            </div>
-            <p class="text-center text-gray-600 text-sm mt-8 reveal">
-                Sport &bull; Cestov&aacute;n&iacute; &bull; Lifestyle &bull; Pejsky &bull; J&iacute;dlo &mdash; kreativu p&rcaron;izp&ucirc;sob&iacute;m va&scaron;im pot&rcaron;eb&aacute;m
+            <p class="text-center text-gray-600 text-sm mt-10 reveal">
+                Chcete byt dalsi? Ozvete se a probrame, jak vam muzu pomoci.
             </p>
         </div>
     </section>
 
-    <!-- ===== SPOLUPRACE / ALTISPORT ===== -->
-    <section id="spoluprace" class="py-28 bg-black relative overflow-hidden section-glow">
-        <div class="vt-watermark left-10 top-1/2 -translate-y-1/2" style="font-size: 22vw; opacity: 0.012;">VT</div>
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-6 reveal">Spolupr&aacute;ce</p>
-                <div class="reveal delay-1">
-                    <img src="img/altisport-logo.jpg" alt="Altisport" class="h-14 md:h-16 mx-auto mb-6 collab-logo">
-                </div>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal delay-2 text-[15px] leading-relaxed">
-                    Dlouhodob&aacute; spolupr&aacute;ce s &ccaron;eskou sportovn&iacute; zna&ccaron;kou p&ucirc;sob&iacute;c&iacute; na 7 trz&iacute;ch v Evrop&ecaron;.
-                    Tvorba UGC video obsahu pro soci&aacute;ln&iacute; s&iacute;t&ecaron; a e-shop &mdash; od product review po
-                    lifestyle kampan&ecaron;.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-1">
-                    <div class="text-3xl mb-4">&#127909;</div>
-                    <h3 class="font-bold mb-3 text-lg">Product videa</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Kr&aacute;tk&aacute; videa p&rcaron;edstavuj&iacute;c&iacute; produkty z pr&eacute;miov&eacute; kolekce &mdash; autenticky, bez p&rcaron;ehr&aacute;v&aacute;n&iacute;.</p>
-                </div>
-                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-2">
-                    <div class="text-3xl mb-4">&#127939;</div>
-                    <h3 class="font-bold mb-3 text-lg">Lifestyle obsah</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Re&aacute;ln&eacute; situace, skute&ccaron;n&eacute; pou&zcaron;it&iacute; produkt&ucirc;. Obsah, kter&yacute; rezonuje s c&iacute;lovkou.</p>
-                </div>
-                <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3">
-                    <div class="text-3xl mb-4">&#128200;</div>
-                    <h3 class="font-bold mb-3 text-lg">V&yacute;sledky</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Obsah nasazovan&yacute; na Meta, Instagram a TikTok s prokazateln&yacute;m dopadem na engagement a prodeje.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CENIK ===== -->
-    <section id="cenik" class="py-28 relative overflow-hidden section-glow">
+    <!-- ===== CTA ===== -->
+    <section class="py-28 relative overflow-hidden section-glow">
         <div class="vt-watermark -right-10 top-20" style="font-size: 16vw; opacity: 0.015;">VT</div>
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Cen&iacute;k</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Bal&iacute;&ccaron;ky spolupr&aacute;ce</h2>
-                <p class="text-gray-400 mt-5 reveal delay-2">Vyberte si, co v&aacute;m sed&iacute;. Ka&zcaron;d&yacute; bal&iacute;&ccaron;ek zahrnuje kompletn&iacute; produkci.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Starter -->
-                <div class="price-card reveal delay-1">
-                    <h3 class="text-lg font-bold mb-1">Starter</h3>
-                    <p class="text-sm text-gray-500 mb-6">Ide&aacute;ln&iacute; na vyzkou&scaron;en&iacute;</p>
-                    <div class="text-4xl font-black mb-6 gradient-text-accent">5 000 K&ccaron; <span class="text-base font-normal text-gray-500" style="-webkit-text-fill-color: #6b7280;">/ video</span></div>
-                    <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 1 UGC video (15&ndash;60s)</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> N&aacute;pad + sc&eacute;n&aacute;&rcaron;</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Nat&aacute;&ccaron;en&iacute; + st&rcaron;ih</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 1 revize</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Form&aacute;t: Reels / TikTok / Shorts</li>
-                    </ul>
-                    <a href="#kontakt" class="block text-center border border-white/15 py-3.5 rounded-full text-sm font-medium hover:border-purple-400/50 hover:bg-purple-400/5 transition">Nez&aacute;vazn&ecaron; poptat</a>
-                </div>
-                <!-- Pro -->
-                <div class="price-card featured reveal delay-2">
-                    <h3 class="text-lg font-bold mb-1">Pro</h3>
-                    <p class="text-sm text-gray-500 mb-6">Pro pravideln&yacute; obsah</p>
-                    <div class="text-4xl font-black mb-6 gradient-text-accent">12 000 K&ccaron; <span class="text-base font-normal text-gray-500" style="-webkit-text-fill-color: #6b7280;">/ 3 videa</span></div>
-                    <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 3 UGC videa</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Content strategie</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Nat&aacute;&ccaron;en&iacute; + profesion&aacute;ln&iacute; st&rcaron;ih</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 2 revize na video</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> V&scaron;echny form&aacute;ty + titulky</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Pou&zcaron;it&iacute; v ads</li>
-                    </ul>
-                    <a href="#kontakt" class="cta-pulse block text-center bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-3.5 rounded-full text-sm font-bold hover:from-purple-400 hover:to-indigo-400 transition">Chci bal&iacute;&ccaron;ek Pro</a>
-                </div>
-                <!-- Partner -->
-                <div class="price-card reveal delay-3">
-                    <h3 class="text-lg font-bold mb-1">Partner</h3>
-                    <p class="text-sm text-gray-500 mb-6">Dlouhodob&aacute; spolupr&aacute;ce</p>
-                    <div class="text-4xl font-black mb-6 gradient-text-accent">Individu&aacute;ln&iacute;</div>
-                    <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 5+ vide&iacute; m&ecaron;s&iacute;&ccaron;n&ecaron;</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Kompletn&iacute; content strategie</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Prioritn&iacute; zpracov&aacute;n&iacute;</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Neomezen&eacute; revize</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Analytics &amp; reporting</li>
-                        <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Exkluzivita v segmentu</li>
-                    </ul>
-                    <a href="#kontakt" class="block text-center border border-white/15 py-3.5 rounded-full text-sm font-medium hover:border-purple-400/50 hover:bg-purple-400/5 transition">Domluvit se</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== JAK TO FUNGUJE ===== -->
-    <section class="py-28 bg-black relative overflow-hidden section-glow">
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Proces</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Jak spolupr&aacute;ce prob&iacute;h&aacute;</h2>
-            </div>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center process-step reveal delay-1">
-                    <div class="step-number w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-black">1</div>
-                    <h3 class="font-bold mb-2 text-lg">Brief</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">&Rcaron;eknete mi, co pot&rcaron;ebujete. Jak&yacute; produkt, c&iacute;lovka, platforma.</p>
-                </div>
-                <div class="text-center process-step reveal delay-2">
-                    <div class="step-number w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-black">2</div>
-                    <h3 class="font-bold mb-2 text-lg">Koncept</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">P&rcaron;iprav&iacute;m sc&eacute;n&aacute;&rcaron; a n&aacute;pad. Schv&aacute;l&iacute;te a jedem.</p>
-                </div>
-                <div class="text-center process-step reveal delay-3">
-                    <div class="step-number w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-black">3</div>
-                    <h3 class="font-bold mb-2 text-lg">Produkce</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Nat&aacute;&ccaron;en&iacute;, st&rcaron;ih, color grading, titulky. V&scaron;e v jedn&eacute;.</p>
-                </div>
-                <div class="text-center process-step reveal delay-4">
-                    <div class="step-number w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-black">4</div>
-                    <h3 class="font-bold mb-2 text-lg">Dod&aacute;n&iacute;</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Hotov&eacute; video ve v&scaron;ech form&aacute;tech. P&rcaron;ipraveno k nasazen&iacute;.</p>
-                </div>
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+            <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Zacneme spolupracovat</p>
+            <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1 mb-6">Pripraveny posunout vas byznys?</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-10 reveal delay-2">
+                Nabizim nezavaznou uvodni konzultaci zdarma. Probereme vase potreby a najdeme zpusob, jak AI a data mohou pomoct vasemu podnikani rust.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal delay-3">
+                <a href="mailto:v.titlbach@gmail.com" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
+                    Napiste mi
+                </a>
+                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
+                    Instagram
+                </a>
             </div>
         </div>
     </section>
 
     <!-- ===== KONTAKT ===== -->
-    <section id="kontakt" class="py-28 relative overflow-hidden section-glow">
-        <div class="vt-watermark left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" style="opacity: 0.02;">
-            <img src="img/logo.png" alt="" class="w-[40vw] max-w-[500px] invert" style="opacity: 0.3;">
-        </div>
-        <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
-            <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Kontakt</p>
-            <h2 class="text-4xl md:text-5xl font-black gradient-text mb-5 reveal delay-1">Poj&Dcaron;me spolu tvo&rcaron;it</h2>
-            <p class="text-gray-400 mb-12 max-w-lg mx-auto reveal delay-2 text-[15px] leading-relaxed">
-                Napi&scaron;te mi a domluv&iacute;me se na spolupr&aacute;ci. R&aacute;d prob&eacute;hnu v&aacute;&scaron; projekt a navrhnu &rcaron;e&scaron;en&iacute; na m&iacute;ru.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal delay-3">
-                <a href="mailto:v.titlbach@gmail.com" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition flex items-center gap-2 text-sm">
-                    &#9993; v.titlbach@gmail.com
+    <section id="kontakt" class="py-28 bg-black relative overflow-hidden section-glow">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Kontakt</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Ozvete se</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="mailto:v.titlbach@gmail.com" class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-1 text-center group">
+                    <div class="service-icon mx-auto">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-1">Email</div>
+                    <div class="text-white font-medium group-hover:text-purple-300 transition">v.titlbach@gmail.com</div>
                 </a>
-                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition flex items-center gap-2 text-sm">
-                    &#128247; @vojtatitlbach
+
+                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-2 text-center group">
+                    <div class="service-icon mx-auto">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-1">Instagram</div>
+                    <div class="text-white font-medium group-hover:text-purple-300 transition">@vojtatitlbach</div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3 text-center group">
+                    <div class="service-icon mx-auto">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="text-sm text-gray-500 mb-1">LinkedIn</div>
+                    <div class="text-white font-medium group-hover:text-purple-300 transition">Vojtech Titlbach</div>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="py-10 border-t border-white/5 bg-brand-950">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <img src="img/logo.png" alt="VT" class="h-7 invert opacity-60">
-                <span class="text-sm text-gray-600">VT Content Creator &copy; 2026</span>
-            </div>
-            <div class="flex items-center gap-6 text-sm text-gray-600">
-                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="hover:text-gray-400 transition">Instagram</a>
-                <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="hover:text-gray-400 transition">LinkedIn</a>
-                <a href="mailto:v.titlbach@gmail.com" class="hover:text-gray-400 transition">Email</a>
-            </div>
-            <div class="text-sm text-gray-700">
-                Vytvo&rcaron;eno pomoc&iacute; AyAURA
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="img/logo.png" alt="VT" class="h-7 invert opacity-50">
+                    <span class="text-sm text-gray-500">Vojtech Titlbach</span>
+                </div>
+                <div class="flex items-center gap-8 text-sm text-gray-500">
+                    <a href="#sluzby" class="hover:text-white transition">Sluzby</a>
+                    <a href="#o-mne" class="hover:text-white transition">O mne</a>
+                    <a href="pages/ugc.html" class="hover:text-white transition">UGC Tvorba</a>
+                    <a href="#kontakt" class="hover:text-white transition">Kontakt</a>
+                </div>
+                <div class="text-xs text-gray-600">
+                    Vytvoreno pomoci AyAURA
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
+    <!-- ===== SCRIPTS ===== -->
     <script>
-    (function() {
-        // --- Intersection Observer for scroll animations ---
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Cursor glow
+        const glow = document.getElementById('cursorGlow');
+        if (glow) {
+            document.addEventListener('mousemove', e => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+        // Hero parallax
+        const heroBg = document.getElementById('heroBg');
+        if (heroBg) {
+            window.addEventListener('scroll', () => {
+                heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
+            });
+        }
+
+        // Scroll reveal (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Trigger counter animation if it's a stat
-                    if (entry.target.classList.contains('stat-card')) {
-                        animateCounter(entry.target);
-                    }
-                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
             observer.observe(el);
         });
 
-        // Also observe stat cards
-        document.querySelectorAll('.stat-card').forEach(function(el) {
-            observer.observe(el);
+        // Counter animation
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count);
+                    const suffix = el.dataset.suffix || '';
+                    let current = 0;
+                    const step = Math.max(1, Math.floor(target / 40));
+                    const interval = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(interval);
+                        }
+                        el.textContent = current + suffix;
+                    }, 30);
+                    countObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-count]').forEach(el => {
+            countObserver.observe(el);
         });
 
-        // --- Animated stat counters ---
-        function animateCounter(card) {
-            var el = card.querySelector('[data-count]');
-            if (!el) return;
-            var target = parseInt(el.getAttribute('data-count'));
-            var suffix = el.getAttribute('data-suffix') || '';
-            var duration = 2000;
-            var start = 0;
-            var startTime = null;
-
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                var progress = Math.min((timestamp - startTime) / duration, 1);
-                // Ease out cubic
-                var eased = 1 - Math.pow(1 - progress, 3);
-                var current = Math.floor(eased * target);
-                el.textContent = current + suffix;
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    el.textContent = target + suffix;
-                }
-            }
-            requestAnimationFrame(step);
-        }
-
-        // --- Parallax effect on hero ---
-        var heroBg = document.getElementById('heroBg');
-        window.addEventListener('scroll', function() {
-            if (!heroBg) return;
-            var scrolled = window.pageYOffset;
-            if (scrolled < window.innerHeight) {
-                heroBg.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
-            }
-        }, { passive: true });
-
-        // --- Cursor glow follower ---
-        var glow = document.getElementById('cursorGlow');
-        if (glow && window.innerWidth > 768) {
-            var mouseX = 0, mouseY = 0;
-            var glowX = 0, glowY = 0;
-
-            document.addEventListener('mousemove', function(e) {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            function updateGlow() {
-                glowX += (mouseX - glowX) * 0.08;
-                glowY += (mouseY - glowY) * 0.08;
-                glow.style.left = glowX + 'px';
-                glow.style.top = glowY + 'px';
-                requestAnimationFrame(updateGlow);
-            }
-            updateGlow();
-        }
-
-        // --- Mobile menu toggle ---
-        var menuBtn = document.getElementById('menuBtn');
-        var mobileMenu = document.getElementById('mobileMenu');
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
         if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', function() {
+            menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('open');
             });
         }
+        function closeMobileMenu() {
+            const m = document.getElementById('mobileMenu');
+            if (m) m.classList.remove('open');
+        }
 
-        // --- Nav background on scroll ---
-        var nav = document.querySelector('nav');
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 100) {
-                nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
-            } else {
-                nav.style.borderBottomColor = 'rgba(255,255,255,0.03)';
-            }
-        }, { passive: true });
-
-    })();
-
-    function closeMobileMenu() {
-        var menu = document.getElementById('mobileMenu');
-        if (menu) menu.classList.remove('open');
-    }
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
-
 </body>
 </html>
