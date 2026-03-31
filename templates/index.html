@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Vojtěch Titlbach | AI & Digitální konzultant{% endblock %}
+{% block meta_desc %}AI konzultace, tvorba webů, e-commerce strategie. Pomáhám firmám růst s využitím AI a dat. 7 EU trhů.{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Background VT watermark -->
+    <div class="absolute inset-0 opacity-[0.10]">
+        <img src="{{ url_for('static', filename='hero-bg.png') }}" alt="" class="w-full h-full object-cover">
+    </div>
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-900/80 via-brand-900/90 to-brand-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="reveal">
+                    <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-6">AI & Digitální konzultant</p>
+                    <h1 class="text-5xl md:text-7xl font-black leading-[1.05] mb-6">
+                        <span class="gradient-text">Vojtěch</span><br>
+                        <span class="gradient-text-accent">Titlbach</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8 max-w-lg">
+                        Tvorba profesionálních webů, AI konzultace a e-commerce strategie. Pomáhám firmám a živnostníkům růst v digitálním světě.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 reveal delay-2">
+                    <a href="{{ url_for('weby') }}" class="btn-primary px-8 py-4 rounded-full text-center font-semibold text-lg">Chci web</a>
+                    <a href="{{ url_for('kontakt') }}" class="btn-secondary px-8 py-4 rounded-full text-center font-semibold text-lg">Kontaktujte mě</a>
+                </div>
+            </div>
+            <div class="reveal-right delay-2 flex justify-center lg:justify-end">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-3xl blur-2xl"></div>
+                    <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Vojtěch Titlbach"
+                         class="relative w-72 h-72 md:w-96 md:h-96 profile-photo rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4 Key Service Cards -->
+<section class="py-28 relative">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Co nabízím</p>
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text">Služby</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Tvorba webů — HIGHLIGHTED / BIGGEST -->
+            <a href="{{ url_for('weby') }}" class="card-hover bg-gradient-to-br from-purple-900/40 to-indigo-900/40 rounded-2xl p-8 reveal delay-1 block md:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden group">
+                <div class="absolute top-4 right-4 bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">HLAVNÍ SLUŽBA</div>
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-300 transition-colors">Tvorba webů</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">Profesionální weby pro živnostníky a malé firmy. Od restaurací přes autoservisy až po řemeslníky. Moderní design, rychlé načítání, optimalizace pro Google.</p>
+                <div class="flex items-center gap-2 text-purple-400 text-sm font-semibold">
+                    <span>Zjistit více</span>
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- AI & Automatizace -->
+            <a href="{{ url_for('ai_automatizace') }}" class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-2 block group">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors">AI & Automatizace</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Automatizace rutinních procesů, AI nástroje pro efektivnější podnikání.</p>
+            </a>
+
+            <!-- Analytika & Reporty -->
+            <a href="{{ url_for('sluzby') }}" class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-3 block group">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors">Analytika & Reporty</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Čtení dat, grafy, jasné výstupy z e-commerce dat.</p>
+            </a>
+
+            <!-- UGC tvorba -->
+            <a href="{{ url_for('ugc') }}" class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-3 block group">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-2 group-hover:text-purple-300 transition-colors">UGC Tvorba</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Autentický video obsah pro značky. Recenze, unboxingy, lifestyle.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio preview — desktop + mobile side by side -->
+<section class="py-28 bg-brand-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Portfolio</p>
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text">Ukázky naší práce</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Pergl -->
+            <div class="reveal delay-1 group">
+                <div class="flex items-end gap-4 mb-5">
+                    <div class="flex-1 rounded-xl overflow-hidden border border-white/5">
+                        <img src="{{ url_for('static', filename='portfolio/pergl.png') }}" alt="Pneuservis Pergl - desktop" class="portfolio-img portfolio-desktop w-full aspect-video object-cover object-top">
+                    </div>
+                    <div class="w-16 shrink-0 rounded-lg overflow-hidden border border-white/5">
+                        <img src="{{ url_for('static', filename='portfolio/pergl_mobile.png') }}" alt="Pneuservis Pergl - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Pneuservis Václav Pergl</h3>
+                <p class="text-gray-400 text-sm mb-1">Pneuservis a autoservis, Louny</p>
+                <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
+            </div>
+            <!-- Chang -->
+            <div class="reveal delay-2 group">
+                <div class="flex items-end gap-4 mb-5">
+                    <div class="flex-1 rounded-xl overflow-hidden border border-white/5">
+                        <img src="{{ url_for('static', filename='portfolio/chang.png') }}" alt="Restaurace Chang - desktop" class="portfolio-img portfolio-desktop w-full aspect-video object-cover object-top">
+                    </div>
+                    <div class="w-16 shrink-0 rounded-lg overflow-hidden border border-white/5">
+                        <img src="{{ url_for('static', filename='portfolio/chang_mobile.png') }}" alt="Restaurace Chang - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Restaurace Chang Asian Cuisine</h3>
+                <p class="text-gray-400 text-sm mb-1">Asijská restaurace, Litvínov</p>
+                <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
+            </div>
+            <!-- Fořt -->
+            <div class="reveal delay-3 group">
+                <div class="flex items-end gap-4 mb-5">
+                    <div class="flex-1 rounded-xl overflow-hidden border border-white/5">
+                        <img src="{{ url_for('static', filename='portfolio/fort.png') }}" alt="Autoservis Fořt - desktop" class="portfolio-img portfolio-desktop w-full aspect-video object-cover object-top">
+                    </div>
+                    <div class="w-16 shrink-0 rounded-lg overflow-hidden border border-white/5">
+                        <img src="{{ url_for('static', filename='portfolio/fort_mobile.png') }}" alt="Autoservis Fořt - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Autoservis Fořt v8</h3>
+                <p class="text-gray-400 text-sm mb-1">Autoservis a pneuservis</p>
+                <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-14 reveal delay-4">
+            <a href="{{ url_for('weby') }}" class="btn-secondary px-8 py-3 rounded-full text-sm font-semibold inline-block">Zobrazit vše</a>
+        </div>
+    </div>
+</section>
+
+<!-- About + Stats -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal-left">
+                <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">O mně</p>
+                <h2 class="text-4xl font-bold gradient-text mb-6">Vojtěch Titlbach</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Jsem COO společnosti Altisport, kde řídím operace na 7 evropských trzích. Mám více než 3 roky zkušeností s implementací AI nástrojů do reálného podnikání.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-8">
+                    Vedle korporátní práce pomáhám menším firmám a živnostníkům získat profesionální online prezentaci a využít moderní technologie pro růst. Každý projekt beru osobně.
+                </p>
+                <a href="{{ url_for('kontakt') }}" class="btn-primary px-6 py-3 rounded-full text-sm font-semibold inline-block">Domluvit konzultaci</a>
+            </div>
+            <div class="reveal-right delay-2">
+                <!-- Stats -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="card-hover bg-brand-800/50 rounded-2xl p-8 text-center">
+                        <p class="text-4xl font-black gradient-text-accent mb-2">7</p>
+                        <p class="text-gray-400 text-sm">EU trhů</p>
+                    </div>
+                    <div class="card-hover bg-brand-800/50 rounded-2xl p-8 text-center">
+                        <p class="text-4xl font-black gradient-text-accent mb-2">3+</p>
+                        <p class="text-gray-400 text-sm">Let s AI</p>
+                    </div>
+                    <div class="card-hover bg-brand-800/50 rounded-2xl p-8 text-center">
+                        <p class="text-4xl font-black gradient-text-accent mb-2">100K+</p>
+                        <p class="text-gray-400 text-sm">Produktů</p>
+                    </div>
+                    <div class="card-hover bg-brand-800/50 rounded-2xl p-8 text-center">
+                        <p class="text-4xl font-black gradient-text-accent mb-2">10+</p>
+                        <p class="text-gray-400 text-sm">Spokojených klientů</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-indigo-900/20"></div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Máte projekt na mysli?</h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Ozvěte se mi a společně vymyslíme, jak vás posunout v digitálním světě. První konzultace je zdarma.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('kontakt') }}" class="btn-primary px-10 py-4 rounded-full font-semibold text-lg">Kontaktujte mě</a>
+            <a href="tel:+420774446081" class="btn-secondary px-10 py-4 rounded-full font-semibold text-lg">+420 774 446 081</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

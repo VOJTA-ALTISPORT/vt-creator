@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}UGC Tvorba | Vojtěch Titlbach{% endblock %}
+{% block meta_desc %}Autentický video obsah pro značky. UGC recenze, unboxingy, lifestyle content. Profesionální kvalita.{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="relative pt-32 pb-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-brand-900"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-6">UGC Tvorba</p>
+            <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6">
+                <span class="gradient-text">Autentický obsah</span><br>
+                <span class="gradient-text-accent">pro vaši značku</span>
+            </h1>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                Vytvářím UGC (User Generated Content) video obsah, který působí přirozeně a důvěryhodně. Ideální pro sociální sítě a reklamní kampaně.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- What is UGC -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal-left">
+                <h2 class="text-3xl font-bold mb-6">Co je UGC?</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    UGC (User Generated Content) je obsah, který vypadá jako by ho natočil běžný uživatel, ne profesionální studio. Právě proto mu lidé věří víc než klasické reklamě.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Vytvářím autentické videa, která značky používají pro reklamy na sociálních sítích, produktové stránky a marketingové kampaně.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="card-hover bg-brand-800/50 rounded-xl p-4 text-center">
+                        <p class="text-2xl font-black text-purple-400 mb-1">4x</p>
+                        <p class="text-gray-400 text-xs">Vyšší engagement než klasická reklama</p>
+                    </div>
+                    <div class="card-hover bg-brand-800/50 rounded-xl p-4 text-center">
+                        <p class="text-2xl font-black text-purple-400 mb-1">79%</p>
+                        <p class="text-gray-400 text-xs">Lidí ovlivní rozhodování UGC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-right delay-2">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="{{ url_for('static', filename='photo-sport.jpg') }}" alt="Sport" class="rounded-2xl w-full aspect-[3/4] object-cover">
+                    <img src="{{ url_for('static', filename='photo-sushi.jpg') }}" alt="Food" class="rounded-2xl w-full aspect-[3/4] object-cover mt-8">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Types of content -->
+<section class="py-28 bg-brand-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Typy obsahu</p>
+            <h2 class="text-4xl font-bold gradient-text">Co vytvářím</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-1">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold mb-2">Unboxing</h3>
+                <p class="text-gray-400 text-sm">Rozbalování produktu s prvním dojmem a reakcí.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-2">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold mb-2">Recenze</h3>
+                <p class="text-gray-400 text-sm">Upřímné hodnocení produktů s reálnými zkušenostmi.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-3">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold mb-2">Lifestyle</h3>
+                <p class="text-gray-400 text-sm">Produkt v reálném životě — sport, cestování, jídlo.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-4">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="font-bold mb-2">Reklamy</h3>
+                <p class="text-gray-400 text-sm">Krátká videa optimalizovaná pro Meta Ads a TikTok.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio gallery -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Portfolio</p>
+            <h2 class="text-4xl font-bold gradient-text">Ukázky obsahu</h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+            <img src="{{ url_for('static', filename='photo-sport.jpg') }}" alt="Sport content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
+            <img src="{{ url_for('static', filename='photo-travel.jpg') }}" alt="Travel content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
+            <img src="{{ url_for('static', filename='photo-sushi.jpg') }}" alt="Food content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
+            <img src="{{ url_for('static', filename='photo-cycling.jpg') }}" alt="Cycling content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="py-28 bg-brand-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Proces</p>
+            <h2 class="text-4xl font-bold gradient-text">Jak to funguje</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center reveal delay-1">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">1</span>
+                </div>
+                <h3 class="font-bold mb-2">Brief</h3>
+                <p class="text-gray-400 text-sm">Pošlete mi produkt a brief — co chcete komunikovat a pro koho.</p>
+            </div>
+            <div class="text-center reveal delay-2">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">2</span>
+                </div>
+                <h3 class="font-bold mb-2">Koncept</h3>
+                <p class="text-gray-400 text-sm">Navrhnu scénář a vizuální styl, který sedne vaší značce.</p>
+            </div>
+            <div class="text-center reveal delay-3">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">3</span>
+                </div>
+                <h3 class="font-bold mb-2">Natáčení</h3>
+                <p class="text-gray-400 text-sm">Natočím obsah s důrazem na autenticitu a kvalitu.</p>
+            </div>
+            <div class="text-center reveal delay-4">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">4</span>
+                </div>
+                <h3 class="font-bold mb-2">Dodání</h3>
+                <p class="text-gray-400 text-sm">Dodáte hotová videa ve všech formátech (9:16, 1:1, 16:9).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Ceník</p>
+            <h2 class="text-4xl font-bold gradient-text">Cenové balíčky</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-1">
+                <h3 class="text-lg font-bold mb-2">Jedno video</h3>
+                <p class="text-gray-400 text-sm mb-6">Pro vyzkoušení</p>
+                <p class="text-4xl font-black mb-1">2 500 <span class="text-lg text-gray-400">Kč</span></p>
+                <p class="text-xs text-gray-500 mb-8">za video</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        15-60s video
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        1 revize
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Plná práva k použití
+                    </li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="btn-secondary px-6 py-3 rounded-full text-sm font-semibold block text-center">Objednat</a>
+            </div>
+
+            <div class="card-hover bg-gradient-to-br from-purple-900/40 to-indigo-900/40 rounded-2xl p-8 reveal delay-2 relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-4 py-1 rounded-full">NEJLEPŠÍ HODNOTA</div>
+                <h3 class="text-lg font-bold mb-2">Balíček 3 videí</h3>
+                <p class="text-gray-400 text-sm mb-6">Pro seriózní kampaně</p>
+                <p class="text-4xl font-black mb-1">6 000 <span class="text-lg text-gray-400">Kč</span></p>
+                <p class="text-xs text-gray-500 mb-8">za 3 videa</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        3x 15-60s video
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        2 revize na video
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Různé formáty (9:16, 1:1)
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Plná práva k použití
+                    </li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="btn-primary px-6 py-3 rounded-full text-sm font-semibold block text-center">Objednat</a>
+            </div>
+
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-3">
+                <h3 class="text-lg font-bold mb-2">Měsíční spolupráce</h3>
+                <p class="text-gray-400 text-sm mb-6">Pravidelný obsah</p>
+                <p class="text-4xl font-black mb-1">Na míru</p>
+                <p class="text-xs text-gray-500 mb-8">měsíčně</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Dohodnutý počet videí/měsíc
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Content strategie
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Prioritní dodání
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Zvýhodněná cena
+                    </li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="btn-secondary px-6 py-3 rounded-full text-sm font-semibold block text-center">Domluvit se</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-indigo-900/20"></div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Chcete obsah pro vaši značku?</h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Ozvěte se mi s vaším produktem a já připravím koncept na míru.</p>
+        <a href="{{ url_for('kontakt') }}" class="btn-primary px-10 py-4 rounded-full font-semibold text-lg inline-block">Kontaktujte mě</a>
+    </div>
+</section>
+{% endblock %}

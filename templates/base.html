@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Vojtěch Titlbach | AI & Digitální konzultant{% endblock %}</title>
+    <meta name="description" content="{% block meta_desc %}AI konzultace, e-commerce strategie a tvorba webů. Pomáhám firmám růst s využitím AI a dat.{% endblock %}">
+    <meta property="og:title" content="Vojtěch Titlbach | AI & Digitální konzultant">
+    <meta property="og:image" content="{{ url_for('static', filename='logo.png') }}">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'inter': ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand': { 50:'#f5f5f5', 100:'#e8e8e8', 200:'#d1d1d1', 800:'#1a1a1a', 900:'#0d0d0d', 950:'#080808' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-accent {
+            background: linear-gradient(135deg, #f0f0f0 0%, #c084fc 40%, #818cf8 60%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(192,132,252,0.3);
+            box-shadow: 0 20px 60px rgba(192,132,252,0.08);
+        }
+
+        .logo-img {
+            width: 48px;
+            height: 40px;
+            object-fit: cover;
+            object-position: center top;
+            overflow: hidden;
+        }
+
+        .portfolio-img {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .portfolio-img:hover {
+            transform: scale(1.03);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #c084fc 0%, #818cf8 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(192,132,252,0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            border-color: rgba(192,132,252,0.5);
+            background: rgba(192,132,252,0.1);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Profile photo — show full head */
+        .profile-photo {
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        /* Portfolio device mockups */
+        .portfolio-desktop {
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .portfolio-mobile {
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-brand-900 text-white antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur bg-brand-900/80 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="{{ url_for('index') }}" class="flex items-center gap-3">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="VT" class="logo-img rounded-lg">
+                <span class="text-lg font-bold hidden sm:block">Vojtěch Titlbach</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="{{ url_for('index') }}" class="text-sm text-gray-300 hover:text-white transition-colors">Domů</a>
+                <a href="{{ url_for('weby') }}" class="text-sm text-gray-300 hover:text-white transition-colors font-semibold">Tvorba webů</a>
+                <a href="{{ url_for('ai_automatizace') }}" class="text-sm text-gray-300 hover:text-white transition-colors">AI & Automatizace</a>
+                <a href="{{ url_for('sluzby') }}" class="text-sm text-gray-300 hover:text-white transition-colors">Služby</a>
+                <a href="{{ url_for('ugc') }}" class="text-sm text-gray-300 hover:text-white transition-colors">UGC Tvorba</a>
+                <a href="{{ url_for('kontakt') }}" class="btn-primary px-5 py-2 rounded-full text-sm font-semibold">Kontakt</a>
+            </div>
+            <!-- Mobile hamburger -->
+            <button id="menuBtn" class="md:hidden text-white" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-brand-900/98 flex flex-col items-center justify-center gap-8 md:hidden">
+        <button class="absolute top-5 right-6 text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <a href="{{ url_for('index') }}" class="text-2xl font-semibold hover:text-purple-400 transition-colors">Domů</a>
+        <a href="{{ url_for('weby') }}" class="text-2xl font-semibold hover:text-purple-400 transition-colors">Tvorba webů</a>
+        <a href="{{ url_for('ai_automatizace') }}" class="text-2xl font-semibold hover:text-purple-400 transition-colors">AI & Automatizace</a>
+        <a href="{{ url_for('sluzby') }}" class="text-2xl font-semibold hover:text-purple-400 transition-colors">Služby</a>
+        <a href="{{ url_for('ugc') }}" class="text-2xl font-semibold hover:text-purple-400 transition-colors">UGC Tvorba</a>
+        <a href="{{ url_for('kontakt') }}" class="text-2xl font-semibold hover:text-purple-400 transition-colors">Kontakt</a>
+    </div>
+
+    <!-- Page content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-brand-950">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="{{ url_for('static', filename='logo.png') }}" alt="VT" class="logo-img rounded-lg">
+                        <span class="text-lg font-bold">Vojtěch Titlbach</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">AI & Digitální konzultant. Pomáhám firmám růst s využitím moderních technologií.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Služby</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="{{ url_for('weby') }}" class="hover:text-white transition-colors">Tvorba webů</a></li>
+                        <li><a href="{{ url_for('ai_automatizace') }}" class="hover:text-white transition-colors">AI & Automatizace</a></li>
+                        <li><a href="{{ url_for('sluzby') }}" class="hover:text-white transition-colors">Analytika & Reporty</a></li>
+                        <li><a href="{{ url_for('ugc') }}" class="hover:text-white transition-colors">UGC tvorba</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>+420 774 446 081</li>
+                        <li><a href="mailto:v.titlbach@gmail.com" class="hover:text-white transition-colors">v.titlbach@gmail.com</a></li>
+                        <li><a href="https://instagram.com/vojtatitlbach" target="_blank" class="hover:text-white transition-colors">@vojtatitlbach</a></li>
+                        <li>IČO: 22476725</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-500">&copy; 2026 Vojtěch Titlbach. Všechna práva vyhrazena.</p>
+                <p class="text-xs text-gray-600">Vytvořeno pomocí <span class="text-purple-400">AyAURA</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

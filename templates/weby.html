@@ -1,0 +1,365 @@
+{% extends "base.html" %}
+
+{% block title %}Tvorba webů | Vojtěch Titlbach{% endblock %}
+{% block meta_desc %}Profesionální weby pro živnostníky a malé firmy. Moderní design, rychlé načítání, SEO optimalizace. Od 12 990 Kč.{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-brand-900"></div>
+    <div class="relative max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl">
+            <div class="reveal">
+                <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-6">Hlavní služba</p>
+                <h1 class="text-5xl md:text-6xl font-black leading-tight mb-6">
+                    <span class="gradient-text">Profesionální weby</span><br>
+                    <span class="gradient-text-accent">pro živnostníky</span>
+                </h1>
+                <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                    Vytvářím moderní webové stránky pro malé firmy, řemeslníky, restaurace, servisy a další živnostníky. Žádné šablony — každý web na míru.
+                </p>
+                <a href="{{ url_for('kontakt') }}" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg inline-block">Chci svůj web</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pro koho stavíme weby -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Pro koho</p>
+            <h2 class="text-4xl font-bold gradient-text">Weby pro restaurace, servisy, řemeslníky, živnostníky</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-1">
+                <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3">Zákazníci vás najdou</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">80 % lidí hledá služby na Google. Bez webu jste pro ně neviditelní. S webem vás najdou přesně ve chvíli, kdy vás potřebují.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-2">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3">Důvěryhodnost</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Profesionální web buduje důvěru. Zákazníci vidí, že to myslíte vážně. Vizitka 21. století, která pracuje 24/7.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-3">
+                <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold mb-3">Více zákazníků</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Web s dobrou SEO optimalizací vám přinese nové zákazníky automaticky. Žádná další investice do reklamy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features / Co dostanete -->
+<section class="py-28 bg-brand-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Co dostanete</p>
+            <h2 class="text-4xl font-bold gradient-text">Kompletní webové řešení</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-1">
+                <h3 class="font-bold mb-2">Responzivní design</h3>
+                <p class="text-gray-400 text-sm">Čistý, profesionální a plně responzivní. Skvěle vypadá na mobilu i desktopu.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-1">
+                <h3 class="font-bold mb-2">SEO optimalizace</h3>
+                <p class="text-gray-400 text-sm">Základní SEO nastavení, aby vás zákazníci našli na Google.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-2">
+                <h3 class="font-bold mb-2">Google Business profil</h3>
+                <p class="text-gray-400 text-sm">Nastavení a propojení s Google Business profilem pro lepší viditelnost.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-2">
+                <h3 class="font-bold mb-2">Napojení sociálních sítí</h3>
+                <p class="text-gray-400 text-sm">Propojení s Instagramem, Facebookem a dalšími sociálními sítěmi.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-3">
+                <h3 class="font-bold mb-2">Rezervační systém</h3>
+                <p class="text-gray-400 text-sm">Online rezervace pro restaurace, servisy a další služby.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-3">
+                <h3 class="font-bold mb-2">Online recenze</h3>
+                <p class="text-gray-400 text-sm">Integrace recenzí z Google a dalších platforem přímo na web.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-4">
+                <h3 class="font-bold mb-2">Kontaktní formuláře</h3>
+                <p class="text-gray-400 text-sm">Snadný kontakt pro zákazníky přímo z webu.</p>
+            </div>
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-6 reveal delay-4">
+                <h3 class="font-bold mb-2">Fotogalerie</h3>
+                <p class="text-gray-400 text-sm">Profesionální prezentace vašich prací, produktů a prostoru.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio — desktop + mobile side by side -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Portfolio</p>
+            <h2 class="text-4xl font-bold gradient-text">Ukázky realizací</h2>
+        </div>
+
+        <!-- Pergl -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-24 reveal">
+            <div class="flex items-end gap-6">
+                <div class="flex-1 rounded-2xl overflow-hidden border border-white/5">
+                    <img src="{{ url_for('static', filename='portfolio/pergl.png') }}" alt="Pneuservis Pergl - desktop" class="portfolio-img portfolio-desktop w-full">
+                </div>
+                <div class="w-24 shrink-0 rounded-xl overflow-hidden border border-white/5">
+                    <img src="{{ url_for('static', filename='portfolio/pergl_mobile.png') }}" alt="Pneuservis Pergl - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-3">Pneuservis Václav Pergl</h3>
+                <p class="text-purple-400 text-sm font-semibold mb-4">Pneuservis a autoservis | Louny</p>
+                <p class="text-gray-300 leading-relaxed mb-4">Kompletní webová prezentace pro pneuservis v Lounech. Přehledný design s důrazem na nabídku služeb, kontaktní údaje a snadnou navigaci pro zákazníky.</p>
+                <ul class="space-y-2 text-sm text-gray-400 mb-3">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Responzivní design
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        SEO optimalizace
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Google Business integrace
+                    </li>
+                </ul>
+                <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
+            </div>
+        </div>
+
+        <!-- Chang -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-24 reveal">
+            <div class="order-2 lg:order-1">
+                <h3 class="text-2xl font-bold mb-3">Restaurace Chang Asian Cuisine</h3>
+                <p class="text-purple-400 text-sm font-semibold mb-4">Asijská restaurace | Litvínov</p>
+                <p class="text-gray-300 leading-relaxed mb-4">Elegantní web pro asijskou restauraci. Jídelní lístek, fotogalerie, možnost rezervace a kontaktní informace — vše na jednom místě.</p>
+                <ul class="space-y-2 text-sm text-gray-400 mb-3">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Online jídelní lístek
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Fotogalerie
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Rezervační systém
+                    </li>
+                </ul>
+                <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
+            </div>
+            <div class="order-1 lg:order-2 flex items-end gap-6">
+                <div class="flex-1 rounded-2xl overflow-hidden border border-white/5">
+                    <img src="{{ url_for('static', filename='portfolio/chang.png') }}" alt="Restaurace Chang - desktop" class="portfolio-img portfolio-desktop w-full">
+                </div>
+                <div class="w-24 shrink-0 rounded-xl overflow-hidden border border-white/5">
+                    <img src="{{ url_for('static', filename='portfolio/chang_mobile.png') }}" alt="Restaurace Chang - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
+                </div>
+            </div>
+        </div>
+
+        <!-- Fořt -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+            <div class="flex items-end gap-6">
+                <div class="flex-1 rounded-2xl overflow-hidden border border-white/5">
+                    <img src="{{ url_for('static', filename='portfolio/fort.png') }}" alt="Autoservis Fořt - desktop" class="portfolio-img portfolio-desktop w-full">
+                </div>
+                <div class="w-24 shrink-0 rounded-xl overflow-hidden border border-white/5">
+                    <img src="{{ url_for('static', filename='portfolio/fort_mobile.png') }}" alt="Autoservis Fořt - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-3">Autoservis Fořt v8</h3>
+                <p class="text-purple-400 text-sm font-semibold mb-4">Autoservis a pneuservis</p>
+                <p class="text-gray-300 leading-relaxed mb-4">Profesionální web pro autoservis s kompletním přehledem služeb, ceníku a kontaktních informací. Optimalizovaný pro mobilní zařízení.</p>
+                <ul class="space-y-2 text-sm text-gray-400 mb-3">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Přehled služeb a ceník
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Mobile-first přístup
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Rychlé načítání
+                    </li>
+                </ul>
+                <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="py-28 bg-brand-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Jak to funguje</p>
+            <h2 class="text-4xl font-bold gradient-text">Jednoduchý proces</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center reveal delay-1">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">1</span>
+                </div>
+                <h3 class="font-bold mb-2">Konzultace</h3>
+                <p class="text-gray-400 text-sm">Probereme vaše potřeby, cílovou skupinu a představy. Zdarma a nezávazně.</p>
+            </div>
+            <div class="text-center reveal delay-2">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">2</span>
+                </div>
+                <h3 class="font-bold mb-2">Návrh</h3>
+                <p class="text-gray-400 text-sm">Připravím návrh designu a struktury webu. Všechno odsouhlasíme před realizací.</p>
+            </div>
+            <div class="text-center reveal delay-3">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">3</span>
+                </div>
+                <h3 class="font-bold mb-2">Realizace</h3>
+                <p class="text-gray-400 text-sm">Nakóduji web, naplním obsahem a optimalizuji pro vyhledávače.</p>
+            </div>
+            <div class="text-center reveal delay-4">
+                <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-black text-purple-400">4</span>
+                </div>
+                <h3 class="font-bold mb-2">Spuštění</h3>
+                <p class="text-gray-400 text-sm">Web jde online. Zařídím hosting, doménu a propojení s Google.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Cenové balíčky</p>
+            <h2 class="text-4xl font-bold gradient-text">Transparentní ceny</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Starter -->
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-1">
+                <h3 class="text-lg font-bold mb-2">Starter</h3>
+                <p class="text-gray-400 text-sm mb-6">Jednoduchý web pro začátek</p>
+                <p class="text-4xl font-black mb-1">12 990 <span class="text-lg text-gray-400">Kč</span></p>
+                <p class="text-xs text-gray-500 mb-8">jednorázově</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        1-3 stránky
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Responzivní design
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Kontaktní formulář
+                    </li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="btn-secondary px-6 py-3 rounded-full text-sm font-semibold block text-center">Mám zájem</a>
+            </div>
+
+            <!-- Business — Highlighted -->
+            <div class="card-hover bg-gradient-to-br from-purple-900/40 to-indigo-900/40 rounded-2xl p-8 reveal delay-2 relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-4 py-1 rounded-full">NEJOBLÍBENĚJŠÍ</div>
+                <h3 class="text-lg font-bold mb-2">Business</h3>
+                <p class="text-gray-400 text-sm mb-6">Kompletní řešení pro růst</p>
+                <p class="text-4xl font-black mb-1">24 990 <span class="text-lg text-gray-400">Kč</span></p>
+                <p class="text-xs text-gray-500 mb-8">jednorázově</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        5+ stránek
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Rezervační systém
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Online recenze
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        SEO optimalizace
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Napojení sociálních sítí
+                    </li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="btn-primary px-6 py-3 rounded-full text-sm font-semibold block text-center">Mám zájem</a>
+            </div>
+
+            <!-- Premium -->
+            <div class="card-hover bg-brand-800/50 rounded-2xl p-8 reveal delay-3">
+                <h3 class="text-lg font-bold mb-2">Premium</h3>
+                <p class="text-gray-400 text-sm mb-6">Maximum pro váš byznys</p>
+                <p class="text-4xl font-black mb-1">Na míru</p>
+                <p class="text-xs text-gray-500 mb-8">dle rozsahu</p>
+                <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        E-shop funkce
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Custom funkce
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        API napojení
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-green-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        Prioritní podpora
+                    </li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="btn-secondary px-6 py-3 rounded-full text-sm font-semibold block text-center">Mám zájem</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-indigo-900/20"></div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Chcete svůj profesionální web?</h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Ozvěte se mi a během pár dnů můžete mít web, který vám bude přinášet nové zákazníky.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('kontakt') }}" class="btn-primary px-10 py-4 rounded-full font-semibold text-lg">Nezávazná konzultace</a>
+            <a href="tel:+420774446081" class="btn-secondary px-10 py-4 rounded-full font-semibold text-lg">+420 774 446 081</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
