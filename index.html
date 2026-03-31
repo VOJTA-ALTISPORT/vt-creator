@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vojtech Titlbach | AI & Digital Consultant</title>
-    <meta name="description" content="AI konzultace, e-commerce strategie a digitalni marketing. Pomaham firmam rust s vyuzitim AI a dat. 7 EU trhu, 30M+ Kc mesicne.">
-    <meta property="og:title" content="Vojtech Titlbach | AI & Digital Consultant">
-    <meta property="og:description" content="AI konzultace, e-commerce strategie, digitalni marketing. 7 EU trhu, 30M+ Kc/mesic.">
+    <title>Vojtěch Titlbach | AI & Digital Consultant</title>
+    <meta name="description" content="AI konzultace, e-commerce strategie a digitální marketing. Pomáhám firmám růst s využitím AI a dat. 7 EU trhů, 30M+ Kč měsíčně.">
+    <meta property="og:title" content="Vojtěch Titlbach | AI & Digital Consultant">
+    <meta property="og:description" content="AI konzultace, e-commerce strategie, digitální marketing. 7 EU trhů, 30M+ Kč/měsíc.">
     <meta property="og:image" content="img/logo.png">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="img/logo.png">
@@ -276,6 +276,176 @@
             0%, 100% { transform: translateY(0); opacity: 0.4; }
             50% { transform: translateY(6px); opacity: 1; }
         }
+
+        /* Logo crop — show only VT monogram, hide "CONTENT CREATOR" text below */
+        .logo-crop {
+            overflow: hidden;
+            display: inline-block;
+        }
+        .logo-crop img {
+            margin-bottom: -30%;
+        }
+
+        /* UGC section styles */
+        .video-placeholder {
+            aspect-ratio: 9/16;
+            background: #111;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .video-placeholder:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 25px 60px -15px rgba(0,0,0,0.6);
+        }
+        .video-placeholder::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+        }
+        .video-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+        .video-placeholder:hover img { transform: scale(1.08); }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 2;
+            width: 52px;
+            height: 52px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .video-placeholder:hover .play-icon {
+            transform: translate(-50%,-50%) scale(1.15);
+            box-shadow: 0 0 30px rgba(255,255,255,0.3);
+        }
+        .play-icon::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 9px 0 9px 15px;
+            border-color: transparent transparent transparent #111;
+            margin-left: 3px;
+        }
+
+        .price-card {
+            background: rgba(17,17,17,0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .price-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(168,85,247,0.06), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .price-card:hover {
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px -15px rgba(0,0,0,0.5);
+        }
+        .price-card:hover::before { opacity: 1; }
+        .price-card.featured {
+            border-color: rgba(168,85,247,0.4);
+            background: rgba(25,15,35,0.9);
+        }
+        .price-card.featured::before { opacity: 1; }
+        .price-card.featured::after {
+            content: 'Nejpopulárnější';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 20px;
+            border-radius: 0 0 12px 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 12px;
+        }
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+            z-index: 2;
+            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.6);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item-tall { grid-row: span 2; }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.4s;
+        }
+        .gallery-item:hover .gallery-label { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item-tall { grid-row: span 1; }
+        }
+
+        .process-step { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .process-step:hover { transform: translateY(-6px); }
+        .process-step:hover .step-number {
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: #fff;
+            box-shadow: 0 0 25px rgba(168,85,247,0.3);
+        }
+        .step-number { transition: all 0.4s; }
+
+        .collab-logo {
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+            transition: all 0.4s;
+        }
+        .collab-logo:hover { opacity: 1; transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-brand-950 text-white overflow-x-hidden">
@@ -287,14 +457,16 @@
     <nav class="fixed top-0 w-full z-50 nav-blur bg-brand-950/80 border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <img src="img/logo.png" alt="VT" class="h-9 invert transition-transform group-hover:scale-110">
-                <span class="text-sm font-bold tracking-wider uppercase text-gray-300 group-hover:text-white transition">Vojtech Titlbach</span>
+                <span class="logo-crop h-9">
+                    <img src="img/logo.png" alt="VT" class="h-9 invert transition-transform group-hover:scale-110">
+                </span>
+                <span class="text-sm font-bold tracking-wider uppercase text-gray-300 group-hover:text-white transition">Vojtěch Titlbach</span>
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
-                <a href="#sluzby" class="nav-link hover:text-white transition">Sluzby</a>
-                <a href="#o-mne" class="nav-link hover:text-white transition">O mne</a>
+                <a href="#sluzby" class="nav-link hover:text-white transition">Služby</a>
+                <a href="#o-mne" class="nav-link hover:text-white transition">O mně</a>
                 <a href="#reference" class="nav-link hover:text-white transition">Reference</a>
-                <a href="pages/ugc.html" class="nav-link hover:text-white transition">UGC Tvorba</a>
+                <a href="#ugc" class="nav-link hover:text-white transition">UGC Tvorba</a>
                 <a href="#kontakt" class="cta-pulse bg-white text-black px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition text-xs uppercase tracking-wider">Kontakt</a>
             </div>
             <button class="md:hidden text-white" id="menuBtn" aria-label="Menu">
@@ -305,10 +477,10 @@
         </div>
         <div class="mobile-menu md:hidden fixed top-[65px] left-0 w-full bg-brand-950/95 nav-blur border-b border-white/5" id="mobileMenu">
             <div class="flex flex-col items-center gap-6 py-8 text-gray-300">
-                <a href="#sluzby" class="hover:text-white transition" onclick="closeMobileMenu()">Sluzby</a>
-                <a href="#o-mne" class="hover:text-white transition" onclick="closeMobileMenu()">O mne</a>
+                <a href="#sluzby" class="hover:text-white transition" onclick="closeMobileMenu()">Služby</a>
+                <a href="#o-mne" class="hover:text-white transition" onclick="closeMobileMenu()">O mně</a>
                 <a href="#reference" class="hover:text-white transition" onclick="closeMobileMenu()">Reference</a>
-                <a href="pages/ugc.html" class="hover:text-white transition" onclick="closeMobileMenu()">UGC Tvorba</a>
+                <a href="#ugc" class="hover:text-white transition" onclick="closeMobileMenu()">UGC Tvorba</a>
                 <a href="#kontakt" class="bg-white text-black px-6 py-2.5 rounded-full font-semibold text-sm" onclick="closeMobileMenu()">Kontakt</a>
             </div>
         </div>
@@ -335,20 +507,20 @@
                         <span class="w-10 h-px bg-gradient-to-l from-transparent to-white/30"></span>
                     </div>
                     <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-5 hero-anim gradient-text" style="animation-delay: 0.15s;">
-                        Vojtech Titlbach
+                        Vojtěch Titlbach
                     </h1>
                     <p class="text-lg md:text-xl text-gray-300 mb-3 hero-anim" style="animation-delay: 0.3s;">
-                        Pomaham firmam rust s vyuzitim <span class="text-white font-semibold">umele inteligence</span>, dat a modernich digitalnich strategii.
+                        Pomáhám firmám růst s využitím <span class="text-white font-semibold">umělé inteligence</span>, dat a moderních digitálních strategií.
                     </p>
                     <p class="text-sm text-gray-500 mb-10 max-w-lg hero-anim" style="animation-delay: 0.4s;">
-                        COO Altisport | 7 EU trhu | 30M+ Kc/mesic rizeny obrat | 3+ let AI automatizace
+                        COO Altisport | 7 EU trhů | 30M+ Kč/měsíc řízený obrat | 3+ let AI automatizace
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start hero-anim" style="animation-delay: 0.5s;">
                         <a href="#kontakt" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
-                            Nezavazna konzultace
+                            Nezávazná konzultace
                         </a>
                         <a href="#sluzby" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
-                            Co nabizim
+                            Co nabízím
                         </a>
                     </div>
                     <div class="flex gap-8 justify-center md:justify-start mt-10 hero-anim" style="animation-delay: 0.6s;">
@@ -360,7 +532,7 @@
                 <!-- Right: Photo -->
                 <div class="flex justify-center hero-anim" style="animation-delay: 0.2s;">
                     <div class="w-64 h-80 md:w-72 md:h-96 rounded-3xl border-2 border-white/10 overflow-hidden bg-brand-800 shadow-2xl shadow-purple-500/10 ring-1 ring-white/5">
-                        <img src="img/profile.jpg" alt="Vojtech Titlbach" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold text-white/30\'>VT</div>'">
+                        <img src="img/profile.jpg" alt="Vojtěch Titlbach" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-5xl font-bold text-white/30\'>VT</div>'">
                     </div>
                 </div>
             </div>
@@ -384,7 +556,7 @@
             <span>GA4</span><span>&bull;</span>
             <span>CHATBOTI</span><span>&bull;</span>
             <span>DATA ANALYTICS</span><span>&bull;</span>
-            <span>7 EU TRHU</span><span>&bull;</span>
+            <span>7 EU TRHŮ</span><span>&bull;</span>
             <span>AI AUTOMATIZACE</span><span>&bull;</span>
             <span>E-COMMERCE</span><span>&bull;</span>
             <span>GOOGLE ADS</span><span>&bull;</span>
@@ -392,7 +564,7 @@
             <span>GA4</span><span>&bull;</span>
             <span>CHATBOTI</span><span>&bull;</span>
             <span>DATA ANALYTICS</span><span>&bull;</span>
-            <span>7 EU TRHU</span><span>&bull;</span>
+            <span>7 EU TRHŮ</span><span>&bull;</span>
         </div>
     </div>
 
@@ -402,11 +574,11 @@
         <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-5 relative z-10">
             <div class="stat-card reveal delay-1">
                 <div class="text-4xl font-black gradient-text-accent" data-count="7" data-suffix="">0</div>
-                <div class="text-sm text-gray-500 mt-2">EU trhu</div>
+                <div class="text-sm text-gray-500 mt-2">EU trhů</div>
             </div>
             <div class="stat-card reveal delay-2">
                 <div class="text-4xl font-black gradient-text-accent" data-count="30" data-suffix="M+">0</div>
-                <div class="text-sm text-gray-500 mt-2">Kc/mesic rizeny obrat</div>
+                <div class="text-sm text-gray-500 mt-2">Kč/měsíc řízený obrat</div>
             </div>
             <div class="stat-card reveal delay-3">
                 <div class="text-4xl font-black gradient-text-accent" data-count="3" data-suffix="+">0</div>
@@ -414,22 +586,22 @@
             </div>
             <div class="stat-card reveal delay-4">
                 <div class="text-4xl font-black gradient-text-accent" data-count="100" data-suffix="K+">0</div>
-                <div class="text-sm text-gray-500 mt-2">Analyzovanych produktu</div>
+                <div class="text-sm text-gray-500 mt-2">Analyzovaných produktů</div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SLUZBY ===== -->
+    <!-- ===== SLUŽBY ===== -->
     <section id="sluzby" class="py-28 bg-black relative overflow-hidden section-glow">
         <div class="vt-watermark -left-10 bottom-10" style="font-size: 20vw; opacity: 0.015;">
             <img src="img/logo.png" alt="" class="w-[30vw] max-w-[400px] invert" style="opacity: 0.3;">
         </div>
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Co nabizim</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Sluzby</h2>
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Co nabízím</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Služby</h2>
                 <p class="text-gray-400 mt-5 max-w-2xl mx-auto reveal delay-2">
-                    Kombinuji hands-on zkusenosti z rizeni e-commerce na 7 trzich s hlubokou znalosti AI nastroju a digitalnich technologii.
+                    Kombinuji hands-on zkušenosti z řízení e-commerce na 7 trzích s hlubokou znalostí AI nástrojů a digitálních technologií.
                 </p>
             </div>
 
@@ -443,7 +615,7 @@
                         </svg>
                     </div>
                     <h3 class="font-bold mb-3 text-lg">AI Konzultace & Automatizace</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Implementace AI nastroju do firemniho prostredi. Automatizace procesu, chatboti, AI asistenti, workflow optimalizace. Zkusenosti z vlastniho AI systemu "Aura".</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Implementace AI nástrojů do firemního prostředí. Automatizace procesů, chatboti, AI asistenti, workflow optimalizace. Zkušenosti z vlastního AI systému "Aura".</p>
                 </div>
 
                 <!-- 2. E-commerce Strategie -->
@@ -455,10 +627,10 @@
                         </svg>
                     </div>
                     <h3 class="font-bold mb-3 text-lg">E-commerce Strategie</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Optimalizace e-shopu, pricing strategie, konverzni optimalizace, expanze na nove trhy. Prakticke zkusenosti z rizeni Altisport na 7 trzich v EU.</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Optimalizace e-shopu, pricing strategie, konverzní optimalizace, expanze na nové trhy. Praktické zkušenosti z řízení Altisport na 7 trzích v EU.</p>
                 </div>
 
-                <!-- 3. Digitalni Marketing -->
+                <!-- 3. Digitální Marketing -->
                 <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -467,19 +639,19 @@
                             <line x1="12" y1="2" x2="12" y2="4"/>
                         </svg>
                     </div>
-                    <h3 class="font-bold mb-3 text-lg">Digitalni Marketing</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Google Ads, Meta Ads, Sklik, Bing Ads. Performance marketing, SEO, multi-channel strategie. Sprava kampani na 7 trzich s meritelnym ROI.</p>
+                    <h3 class="font-bold mb-3 text-lg">Digitální Marketing</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Google Ads, Meta Ads, Sklik, Bing Ads. Performance marketing, SEO, multi-channel strategie. Správa kampaní na 7 trzích s měřitelným ROI.</p>
                 </div>
 
-                <!-- 4. IT Reseni -->
+                <!-- 4. IT Řešení -->
                 <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-4">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
                         </svg>
                     </div>
-                    <h3 class="font-bold mb-3 text-lg">IT Reseni</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Systemova integrace, API napojeni, vlastni dashboardy a reporting. Automatizovane datove pipeline, monitoring a alerting.</p>
+                    <h3 class="font-bold mb-3 text-lg">IT Řešení</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Systémová integrace, API napojení, vlastní dashboardy a reporting. Automatizované datové pipeline, monitoring a alerting.</p>
                 </div>
 
                 <!-- 5. Data & Analytics -->
@@ -490,18 +662,18 @@
                         </svg>
                     </div>
                     <h3 class="font-bold mb-3 text-lg">Data & Analytics</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">GA4, Power BI, datova analyza, KPI monitoring. Nastaveni mereni, attributnich modelu a automatizovaneho reportingu.</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">GA4, Power BI, datová analýza, KPI monitoring. Nastavení měření, atribučních modelů a automatizovaného reportingu.</p>
                 </div>
 
-                <!-- 6. Obsahova Strategie -->
+                <!-- 6. Obsahová Strategie -->
                 <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-6">
                     <div class="service-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                         </svg>
                     </div>
-                    <h3 class="font-bold mb-3 text-lg">Obsahova Strategie</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">UGC tvorba, socialni site, brand building. Obsahova strategie pro e-commerce s durazem na autenticitu a meritelne vysledky.</p>
+                    <h3 class="font-bold mb-3 text-lg">Obsahová Strategie</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">UGC tvorba, sociální sítě, brand building. Obsahová strategie pro e-commerce s důrazem na autenticitu a měřitelné výsledky.</p>
                 </div>
             </div>
         </div>
@@ -529,58 +701,58 @@
         </div>
     </div>
 
-    <!-- ===== O MNE / WHY ME ===== -->
+    <!-- ===== O MNĚ / WHY ME ===== -->
     <section id="o-mne" class="py-28 relative overflow-hidden section-glow">
         <div class="vt-watermark right-0 top-20" style="font-size: 18vw; opacity: 0.018;">VT</div>
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">O mne</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Proc prave ja</h2>
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">O mně</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Proč právě já</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-16 items-start">
                 <div class="reveal-left">
                     <div class="space-y-5 text-gray-400 leading-relaxed text-[15px]">
                         <p>
-                            Nejsem teoretik. Jako COO spolecnosti Altisport denne ridim e-commerce operace na 7 trzich
-                            v Evrope s obratem pres 30 milionu korun mesicne. Vim, co funguje v praxi, protoze to sam provozuji.
+                            Nejsem teoretik. Jako COO společnosti Altisport denně řídím e-commerce operace na 7 trzích
+                            v Evropě s obratem přes 30 milionů korun měsíčně. Vím, co funguje v praxi, protože to sám provozuji.
                         </p>
                         <p>
-                            Pred 3 lety jsem zacal budovat vlastni AI system "Aura" -- kompletniho digitalniho asistenta,
-                            ktery automatizuje reporting, monitoring reklam, datove analyzy a komunikaci. Neni to hracka,
-                            ale produkcni system, ktery denne spravuje tisice datovych bodu.
+                            Před 3 lety jsem začal budovat vlastní AI systém "Aura" -- kompletního digitálního asistenta,
+                            který automatizuje reporting, monitoring reklam, datové analýzy a komunikaci. Není to hračka,
+                            ale produkční systém, který denně spravuje tisíce datových bodů.
                         </p>
                         <p>
-                            Tento hands-on pristup k AI a technologiim prenosimu i do konzultaci. Neradim, co byste mohli delat.
-                            Ukazuji, jak to udelat, a pomahm to implementovat.
+                            Tento hands-on přístup k AI a technologiím přenáším i do konzultací. Neradím, co byste mohli dělat.
+                            Ukazuji, jak to udělat, a pomáhám to implementovat.
                         </p>
                         <p>
-                            Moje unikatni kombinace: hluboky e-commerce know-how + prakticke AI dovednosti + data-driven pristup.
-                            At chcete automatizovat procesy, expandovat na nove trhy nebo zefektivnit marketing --
-                            vim, jak na to.
+                            Moje unikátní kombinace: hluboký e-commerce know-how + praktické AI dovednosti + data-driven přístup.
+                            Ať chcete automatizovat procesy, expandovat na nové trhy nebo zefektivnit marketing --
+                            vím, jak na to.
                         </p>
                     </div>
                 </div>
                 <div class="space-y-4 reveal-right">
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
                         <div class="text-sm text-gray-500 mb-1.5">Pozice</div>
-                        <div class="text-white text-[15px]">COO Altisport -- ceska sportovni e-commerce znacka, 7 EU trhu</div>
+                        <div class="text-white text-[15px]">COO Altisport -- česká sportovní e-commerce značka, 7 EU trhů</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
                         <div class="text-sm text-gray-500 mb-1.5">AI & Technologie</div>
-                        <div class="text-white text-[15px]">Vlastni AI system "Aura" -- Claude, Python, API integrace, automatizace</div>
+                        <div class="text-white text-[15px]">Vlastní AI systém "Aura" -- Claude, Python, API integrace, automatizace</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
                         <div class="text-sm text-gray-500 mb-1.5">Marketing</div>
-                        <div class="text-white text-[15px]">Google Ads, Meta Ads, Sklik, Bing Ads -- 7 trhu, multi-channel</div>
+                        <div class="text-white text-[15px]">Google Ads, Meta Ads, Sklik, Bing Ads -- 7 trhů, multi-channel</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
                         <div class="text-sm text-gray-500 mb-1.5">Data</div>
-                        <div class="text-white text-[15px]">GA4, Power BI, Python analytics, vlastni dashboardy a reporting</div>
+                        <div class="text-white text-[15px]">GA4, Power BI, Python analytics, vlastní dashboardy a reporting</div>
                     </div>
                     <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
                         <div class="text-sm text-gray-500 mb-1.5">E-commerce</div>
-                        <div class="text-white text-[15px]">Pricing, feed management, konverzni optimalizace, mezinarodni expanze</div>
+                        <div class="text-white text-[15px]">Pricing, feed management, konverzní optimalizace, mezinárodní expanze</div>
                     </div>
                 </div>
             </div>
@@ -593,9 +765,9 @@
         <div class="max-w-5xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
                 <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Reference</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Co rikaji klienti</h2>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Co říkají klienti</h2>
                 <p class="text-gray-400 mt-5 max-w-xl mx-auto reveal delay-2">
-                    Spolupracuji s firmami, ktere chteji vyuzit potencial AI a dat pro realne vysledky.
+                    Spolupracuji s firmami, které chtějí využít potenciál AI a dat pro reálné výsledky.
                 </p>
             </div>
 
@@ -609,7 +781,7 @@
                         <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
                     <p class="text-gray-300 text-[15px] leading-relaxed mb-6 italic">
-                        "Vojta nam pomohl implementovat AI do naseho marketingoveho workflow. Cas straveny manualnim reportingem jsme snizili o 80%. Navic jsme ziskali prehled o datech, ktery jsme predtim nemeli."
+                        "Vojta nám pomohl implementovat AI do našeho marketingového workflow. Čas strávený manuálním reportingem jsme snížili o 80%. Navíc jsme získali přehled o datech, který jsme předtím neměli."
                     </p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center text-sm font-bold text-gray-400">MK</div>
@@ -629,7 +801,7 @@
                         <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
                     <p class="text-gray-300 text-[15px] leading-relaxed mb-6 italic">
-                        "Profesionalni pristup k e-commerce strategii. Vojta nam pomohl s expanzi na slovensky trh a nastavil Google Ads kampane, ktere prinaseji meritelne vysledky od prvniho mesice."
+                        "Profesionální přístup k e-commerce strategii. Vojta nám pomohl s expanzí na slovenský trh a nastavil Google Ads kampaně, které přinášejí měřitelné výsledky od prvního měsíce."
                     </p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center text-sm font-bold text-gray-400">PH</div>
@@ -642,23 +814,283 @@
             </div>
 
             <p class="text-center text-gray-600 text-sm mt-10 reveal">
-                Chcete byt dalsi? Ozvete se a probrame, jak vam muzu pomoci.
+                Chcete být další? Ozvěte se a probereme, jak vám mohu pomoci.
             </p>
         </div>
     </section>
 
+    <!-- ===== UGC TVORBA ===== -->
+    <section id="ugc" class="py-28 relative overflow-hidden section-glow">
+        <div class="vt-watermark -left-10 bottom-10" style="font-size: 20vw; opacity: 0.015;">UGC</div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Content Creator</p>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">UGC Tvorba</h2>
+                <p class="text-gray-400 mt-5 max-w-xl mx-auto reveal delay-2">
+                    Tvořím autentický video obsah, který prodává. Spolupráce se značkami na 7 trzích v EU.
+                </p>
+            </div>
+
+            <!-- UGC Stats -->
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+                <div class="stat-card reveal delay-1">
+                    <div class="text-3xl font-black gradient-text-accent">3+</div>
+                    <div class="text-sm text-gray-500 mt-2">Roky zkušeností</div>
+                </div>
+                <div class="stat-card reveal delay-2">
+                    <div class="text-3xl font-black gradient-text-accent">50+</div>
+                    <div class="text-sm text-gray-500 mt-2">Vytvořených videí</div>
+                </div>
+                <div class="stat-card reveal delay-3">
+                    <div class="text-3xl font-black gradient-text-accent">7</div>
+                    <div class="text-sm text-gray-500 mt-2">Trhů v EU</div>
+                </div>
+                <div class="stat-card reveal delay-4">
+                    <div class="text-3xl font-black gradient-text-accent">100K+</div>
+                    <div class="text-sm text-gray-500 mt-2">Zobrazení</div>
+                </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-center mb-8 reveal">Ukázky tvorby</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="video-placeholder reveal-scale delay-1">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=700&fit=crop" alt="Sportovní lifestyle">
+                        <div class="play-icon"></div>
+                        <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Lifestyle</div>
+                    </div>
+                    <div class="video-placeholder reveal-scale delay-2">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=700&fit=crop" alt="Product review">
+                        <div class="play-icon"></div>
+                        <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Product</div>
+                    </div>
+                    <div class="video-placeholder reveal-scale delay-3">
+                        <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?w=400&h=700&fit=crop" alt="Outdoor">
+                        <div class="play-icon"></div>
+                        <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Outdoor</div>
+                    </div>
+                    <div class="video-placeholder reveal-scale delay-4">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=700&fit=crop" alt="Fitness">
+                        <div class="play-icon"></div>
+                        <div class="absolute bottom-4 left-4 z-10 text-xs text-white/80 font-medium">Altisport &bull; Fitness</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About UGC + specializations -->
+            <div class="grid md:grid-cols-2 gap-16 items-start mb-20">
+                <div class="reveal-left">
+                    <h3 class="text-2xl font-bold mb-6">Víc než jen kameraman</h3>
+                    <div class="space-y-5 text-gray-400 leading-relaxed text-[15px]">
+                        <p>
+                            Tvořím autentický video obsah pro značky a e-shopy. Specializuji se na UGC
+                            (User Generated Content) -- videa, která působí přirozeně a důvěryhodně,
+                            protože právě takový obsah dnes prodává nejlépe.
+                        </p>
+                        <p>
+                            Jako COO ve společnosti Altisport (7 trhů v EU, obrat 30M Kč/měsíc)
+                            rozumím, co značky potřebují a jaký obsah funguje z pohledu konverzí
+                            a prodejů. Tenhle přesah z e-commerce do tvorby obsahu je to, co mě odlišuje
+                            od běžných creatorů.
+                        </p>
+                        <p>
+                            Každé video tvořím s cílem -- není to jen hezký obsah,
+                            ale nástroj, který přináší výsledky. Vím, jaký obsah
+                            konvertuje, protože to denně řídím na straně značky.
+                        </p>
+                        <p>
+                            Sport, cestování, gastro, lifestyle -- tvořím obsah pro jakýkoliv typ
+                            spolupráce. A pokud to k vaší značce sedí, rád přizvu
+                            i svého Shiba Inu "Sushi".
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-4 reveal-right">
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Specializace</div>
+                        <div class="text-white text-[15px]">UGC videa &bull; Product reviews &bull; Lifestyle &bull; Reels &bull; TikTok &bull; Stories</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Sport & outdoor</div>
+                        <div class="text-white text-[15px]">Běh v dresu ČR &bull; Cyklistika v horách &bull; Fitness &bull; Závody &bull; Sportovní móda</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Cestování & lifestyle</div>
+                        <div class="text-white text-[15px]">Budapest &bull; Evropská města &bull; Interiéry &bull; Travel vlogy</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Gastro & food</div>
+                        <div class="text-white text-[15px]">Restaurace &bull; Recepty &bull; Food styling &bull; Gastro scéna</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Bonus</div>
+                        <div class="text-white text-[15px]">Shiba Inu "Sushi" -- na přání i s pejskem na place</div>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-6 card-hover">
+                        <div class="text-sm text-gray-500 mb-1.5">Produkční zázemí</div>
+                        <div class="text-white text-[15px]">Hezké interiérové prostory &bull; Profesionální technika</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="gallery-grid mb-8" style="grid-template-rows: 200px 200px;">
+                <div class="gallery-item gallery-item-tall reveal-scale delay-1" style="grid-row: span 2;">
+                    <img src="img/photo-sport.jpg" alt="Závod v dresu ČR" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Sport &bull; Běh v dresu ČR</div>
+                </div>
+                <div class="gallery-item reveal-scale delay-2">
+                    <img src="img/photo-travel.jpg" alt="Budapest" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Travel &bull; Budapest</div>
+                </div>
+                <div class="gallery-item reveal-scale delay-3">
+                    <img src="img/photo-cycling.jpg" alt="Cyklistika" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Sport &bull; Cyklistika</div>
+                </div>
+                <div class="gallery-item reveal-scale delay-4" style="grid-column: span 2;">
+                    <img src="img/photo-sushi.jpg" alt="Sushi -- Shiba Inu" style="height: 100%;">
+                    <div class="gallery-overlay"></div>
+                    <div class="gallery-label">Lifestyle &bull; Sushi the Shiba</div>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 text-sm reveal">
+                Sport &bull; Cestování &bull; Lifestyle &bull; Pejsky &bull; Jídlo -- kreativu přizpůsobím vašim potřebám
+            </p>
+
+            <!-- Spoluprace / Altisport -->
+            <div class="mt-20 mb-20">
+                <div class="text-center mb-12">
+                    <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-6 reveal">Spolupráce</p>
+                    <div class="reveal delay-1">
+                        <img src="img/altisport-logo.jpg" alt="Altisport" class="h-14 md:h-16 mx-auto mb-6 collab-logo">
+                    </div>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto reveal delay-2 text-[15px] leading-relaxed">
+                        Dlouhodobá spolupráce s českou sportovní značkou působící na 7 trzích v Evropě.
+                        Tvorba UGC video obsahu pro sociální sítě a e-shop -- od product review po
+                        lifestyle kampaně.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-1">
+                        <div class="text-3xl mb-4">&#127909;</div>
+                        <h3 class="font-bold mb-3 text-lg">Product videa</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Krátká videa představující produkty z prémiové kolekce -- autenticky, bez přehrávání.</p>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-2">
+                        <div class="text-3xl mb-4">&#127939;</div>
+                        <h3 class="font-bold mb-3 text-lg">Lifestyle obsah</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Reálné situace, skutečné použití produktů. Obsah, který rezonuje s cílovkou.</p>
+                    </div>
+                    <div class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3">
+                        <div class="text-3xl mb-4">&#128200;</div>
+                        <h3 class="font-bold mb-3 text-lg">Výsledky</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">Obsah nasazovaný na Meta, Instagram a TikTok s prokazatelným dopadem na engagement a prodeje.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jak pracuji -->
+            <div class="mb-20">
+                <div class="text-center mb-16">
+                    <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Proces</p>
+                    <h3 class="text-3xl md:text-4xl font-black gradient-text reveal delay-1">Jak pracuji</h3>
+                </div>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="process-step text-center reveal delay-1">
+                        <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">1</div>
+                        <h3 class="font-bold mb-2">Brief</h3>
+                        <p class="text-sm text-gray-500">Probereme vaši značku, cílovku a co chcete sdělit.</p>
+                    </div>
+                    <div class="process-step text-center reveal delay-2">
+                        <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">2</div>
+                        <h3 class="font-bold mb-2">Scénář</h3>
+                        <p class="text-sm text-gray-500">Připravím nápad a scénář, který sedí k vašemu brandu.</p>
+                    </div>
+                    <div class="process-step text-center reveal delay-3">
+                        <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">3</div>
+                        <h3 class="font-bold mb-2">Natáčení</h3>
+                        <p class="text-sm text-gray-500">Profesionální natočení s důrazem na autenticitu.</p>
+                    </div>
+                    <div class="process-step text-center reveal delay-4">
+                        <div class="step-number w-14 h-14 rounded-full bg-brand-800 border border-white/10 flex items-center justify-center mx-auto mb-5 text-lg font-bold">4</div>
+                        <h3 class="font-bold mb-2">Dodání</h3>
+                        <p class="text-sm text-gray-500">Střih, colour grading, hudba. Hotové video včetně revizí.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ceník UGC -->
+            <div>
+                <div class="text-center mb-16">
+                    <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Ceník</p>
+                    <h3 class="text-3xl md:text-4xl font-black gradient-text reveal delay-1">Balíčky spolupráce</h3>
+                    <p class="text-gray-400 mt-5 reveal delay-2">Vyberte si, co vám sedí. Každý balíček zahrnuje kompletní produkci.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Starter -->
+                    <div class="price-card reveal delay-1">
+                        <h3 class="text-lg font-bold mb-1">Starter</h3>
+                        <p class="text-sm text-gray-500 mb-6">Ideální na vyzkoušení</p>
+                        <div class="text-4xl font-black mb-6 gradient-text-accent">5 000 Kč <span class="text-base font-normal text-gray-500" style="-webkit-text-fill-color: #6b7280;">/ video</span></div>
+                        <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 1 UGC video (15-60s)</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Nápad + scénář</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Natáčení + střih</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 1 revize</li>
+                        </ul>
+                        <a href="#kontakt" class="block text-center border border-white/20 px-6 py-3 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm">Chci začít</a>
+                    </div>
+
+                    <!-- Pro -->
+                    <div class="price-card featured reveal delay-2">
+                        <h3 class="text-lg font-bold mb-1">Pro</h3>
+                        <p class="text-sm text-gray-500 mb-6">Pro pravidelný obsah</p>
+                        <div class="text-4xl font-black mb-6 gradient-text-accent">12 000 Kč <span class="text-base font-normal text-gray-500" style="-webkit-text-fill-color: #6b7280;">/ měsíc</span></div>
+                        <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 3 UGC videa / měsíc</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Obsahová strategie</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Natáčení + střih</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> 2 revize / video</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Prioritní komunikace</li>
+                        </ul>
+                        <a href="#kontakt" class="block text-center bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition text-sm">Vybrat Pro</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="price-card reveal delay-3">
+                        <h3 class="text-lg font-bold mb-1">Enterprise</h3>
+                        <p class="text-sm text-gray-500 mb-6">Kompletní obsahová spolupráce</p>
+                        <div class="text-4xl font-black mb-6 gradient-text-accent">Dle dohody</div>
+                        <ul class="space-y-3.5 text-sm text-gray-400 mb-8">
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Neomezený počet videí</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Kompletní obsahová strategie</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Fotografie + video</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Neomezené revize</li>
+                            <li class="flex items-start gap-3"><span class="text-purple-400 mt-0.5 font-bold">&#10003;</span> Dedikovaný support</li>
+                        </ul>
+                        <a href="#kontakt" class="block text-center border border-white/20 px-6 py-3 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm">Domluvit schůzku</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== CTA ===== -->
-    <section class="py-28 relative overflow-hidden section-glow">
+    <section class="py-28 bg-black relative overflow-hidden section-glow">
         <div class="vt-watermark -right-10 top-20" style="font-size: 16vw; opacity: 0.015;">VT</div>
         <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
-            <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Zacneme spolupracovat</p>
-            <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1 mb-6">Pripraveny posunout vas byznys?</h2>
+            <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Začněme spolupracovat</p>
+            <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1 mb-6">Připravený posunout váš byznys?</h2>
             <p class="text-gray-400 max-w-xl mx-auto mb-10 reveal delay-2">
-                Nabizim nezavaznou uvodni konzultaci zdarma. Probereme vase potreby a najdeme zpusob, jak AI a data mohou pomoct vasemu podnikani rust.
+                Nabízím nezávaznou úvodní konzultaci zdarma. Probereme vaše potřeby a najdeme způsob, jak AI a data mohou pomoct vašemu podnikání růst.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center reveal delay-3">
                 <a href="mailto:v.titlbach@gmail.com" class="cta-pulse bg-white text-black px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition text-sm uppercase tracking-wider">
-                    Napiste mi
+                    Napište mi
                 </a>
                 <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="border border-white/20 px-10 py-4 rounded-full font-medium hover:border-white/50 hover:bg-white/5 transition text-sm uppercase tracking-wider">
                     Instagram
@@ -668,43 +1100,77 @@
     </section>
 
     <!-- ===== KONTAKT ===== -->
-    <section id="kontakt" class="py-28 bg-black relative overflow-hidden section-glow">
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <section id="kontakt" class="py-28 relative overflow-hidden section-glow">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
                 <p class="text-xs text-gray-500 uppercase tracking-[0.3em] mb-4 reveal">Kontakt</p>
-                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Ozvete se</h2>
+                <h2 class="text-4xl md:text-5xl font-black gradient-text reveal delay-1">Ozvěte se</h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <a href="mailto:v.titlbach@gmail.com" class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-1 text-center group">
-                    <div class="service-icon mx-auto">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-                        </svg>
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <!-- Left: Contact info -->
+                <div class="space-y-6 reveal-left">
+                    <div class="bg-brand-900/80 rounded-2xl p-8 card-hover">
+                        <h3 class="text-lg font-bold mb-6">Vojtěch Titlbach</h3>
+                        <div class="space-y-4 text-[15px]">
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+                                </svg>
+                                <span>IČO: 22476725</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                                <a href="tel:+420774446081" class="hover:text-white transition">+420 774 446 081</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-sm text-gray-500 mb-1">Email</div>
-                    <div class="text-white font-medium group-hover:text-purple-300 transition">v.titlbach@gmail.com</div>
-                </a>
+                </div>
 
-                <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-2 text-center group">
-                    <div class="service-icon mx-auto">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                        </svg>
-                    </div>
-                    <div class="text-sm text-gray-500 mb-1">Instagram</div>
-                    <div class="text-white font-medium group-hover:text-purple-300 transition">@vojtatitlbach</div>
-                </a>
+                <!-- Right: Links -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal-right">
+                    <a href="mailto:v.titlbach@gmail.com" class="bg-brand-900/80 rounded-2xl p-6 card-hover text-center group">
+                        <div class="service-icon mx-auto">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-1">Email</div>
+                        <div class="text-white font-medium group-hover:text-purple-300 transition text-sm">v.titlbach@gmail.com</div>
+                    </a>
 
-                <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="bg-brand-900/80 rounded-2xl p-8 card-hover reveal delay-3 text-center group">
-                    <div class="service-icon mx-auto">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                        </svg>
-                    </div>
-                    <div class="text-sm text-gray-500 mb-1">LinkedIn</div>
-                    <div class="text-white font-medium group-hover:text-purple-300 transition">Vojtech Titlbach</div>
-                </a>
+                    <a href="tel:+420774446081" class="bg-brand-900/80 rounded-2xl p-6 card-hover text-center group">
+                        <div class="service-icon mx-auto">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-1">Telefon</div>
+                        <div class="text-white font-medium group-hover:text-purple-300 transition text-sm">+420 774 446 081</div>
+                    </a>
+
+                    <a href="https://www.instagram.com/vojtatitlbach/" target="_blank" class="bg-brand-900/80 rounded-2xl p-6 card-hover text-center group">
+                        <div class="service-icon mx-auto">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-1">Instagram</div>
+                        <div class="text-white font-medium group-hover:text-purple-300 transition text-sm">@vojtatitlbach</div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/vojt%C4%9Bch-titlbach-a4a5711b4/" target="_blank" class="bg-brand-900/80 rounded-2xl p-6 card-hover text-center group">
+                        <div class="service-icon mx-auto">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="text-sm text-gray-500 mb-1">LinkedIn</div>
+                        <div class="text-white font-medium group-hover:text-purple-300 transition text-sm">Vojtěch Titlbach</div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -714,17 +1180,19 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-3">
-                    <img src="img/logo.png" alt="VT" class="h-7 invert opacity-50">
-                    <span class="text-sm text-gray-500">Vojtech Titlbach</span>
+                    <span class="logo-crop h-7">
+                        <img src="img/logo.png" alt="VT" class="h-7 invert opacity-50">
+                    </span>
+                    <span class="text-sm text-gray-500">Vojtěch Titlbach</span>
                 </div>
                 <div class="flex items-center gap-8 text-sm text-gray-500">
-                    <a href="#sluzby" class="hover:text-white transition">Sluzby</a>
-                    <a href="#o-mne" class="hover:text-white transition">O mne</a>
-                    <a href="pages/ugc.html" class="hover:text-white transition">UGC Tvorba</a>
+                    <a href="#sluzby" class="hover:text-white transition">Služby</a>
+                    <a href="#o-mne" class="hover:text-white transition">O mně</a>
+                    <a href="#ugc" class="hover:text-white transition">UGC Tvorba</a>
                     <a href="#kontakt" class="hover:text-white transition">Kontakt</a>
                 </div>
                 <div class="text-xs text-gray-600">
-                    Vytvoreno pomoci AyAURA
+                    Vytvořeno pomocí AURA
                 </div>
             </div>
         </div>
