@@ -274,7 +274,8 @@
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-brand-950 flex flex-col items-center justify-center gap-8 md:hidden" style="background: #080808;">
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden" style="background: #080808;">
+        <img src="{{ url_for('static', filename='logo_white.png') }}" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60vw;opacity:0.04;pointer-events:none;">
         <button class="absolute top-5 right-6 text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
