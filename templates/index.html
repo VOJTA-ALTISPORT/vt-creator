@@ -5,13 +5,9 @@
 
 {% block content %}
 <!-- Hero -->
-<section class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Background VT watermark -->
-    <div class="absolute inset-0 opacity-[0.10]">
-        <img src="{{ url_for('static', filename='hero-bg.png') }}" alt="" class="w-full h-full object-cover">
-    </div>
+<section class="relative flex items-center overflow-hidden" style="min-height: 90vh;">
     <!-- Gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-900/80 via-brand-900/90 to-brand-900"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-900/60 via-brand-900/80 to-brand-900"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -43,7 +39,7 @@
 </section>
 
 <!-- 4 Key Service Cards -->
-<section class="py-28 relative">
+<section class="py-32 relative">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
             <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Co nabízím</p>
@@ -52,8 +48,8 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Tvorba webů — HIGHLIGHTED / BIGGEST -->
-            <a href="{{ url_for('weby') }}" class="card-hover bg-gradient-to-br from-purple-900/40 to-indigo-900/40 rounded-2xl p-8 reveal delay-1 block md:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden group">
-                <div class="absolute top-4 right-4 bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">HLAVNÍ SLUŽBA</div>
+            <a href="{{ url_for('weby') }}" class="card-hover card-glass bg-gradient-to-br from-purple-900/40 to-indigo-900/40 rounded-2xl p-8 reveal delay-1 block md:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden group">
+                <div class="absolute top-4 right-4 bg-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full">HLAVNI SLUZBA</div>
                 <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -61,6 +57,17 @@
                 </div>
                 <h3 class="text-2xl font-bold mb-3 group-hover:text-purple-300 transition-colors">Tvorba webů</h3>
                 <p class="text-gray-400 leading-relaxed mb-6">Profesionální weby pro živnostníky a malé firmy. Od restaurací přes autoservisy až po řemeslníky. Moderní design, rychlé načítání, optimalizace pro Google.</p>
+
+
+                <!-- Pergl website preview mockup -->
+                <div class="flex items-end gap-3 mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+                    <div class="rounded-lg overflow-hidden border border-white/10 shadow-lg" style="max-width: 200px;">
+                        <img src="{{ url_for('static', filename='portfolio/pergl.png') }}" alt="Pergl - ukázka webu" class="w-full aspect-video object-cover object-top">
+                    </div>
+                    <div class="rounded-lg overflow-hidden border border-white/10 shadow-lg" style="max-width: 80px;">
+                        <img src="{{ url_for('static', filename='portfolio/pergl_mobile.png') }}" alt="Pergl - mobil" class="w-full aspect-[9/16] object-cover object-top">
+                    </div>
+                </div>
                 <div class="flex items-center gap-2 text-purple-400 text-sm font-semibold">
                     <span>Zjistit více</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,8 +112,15 @@
     </div>
 </section>
 
+<!-- Marquee ticker -->
+<div class="marquee-wrap">
+    <div class="marquee-inner">
+        <span>AI &nbsp;&bull;&nbsp; AUTOMATIZACE &nbsp;&bull;&nbsp; E-COMMERCE &nbsp;&bull;&nbsp; TVORBA WEBŮ &nbsp;&bull;&nbsp; MARKETING &nbsp;&bull;&nbsp; ANALYTIKA &nbsp;&bull;&nbsp; UGC &nbsp;&bull;&nbsp; PRICING &nbsp;&bull;&nbsp; AI &nbsp;&bull;&nbsp; AUTOMATIZACE &nbsp;&bull;&nbsp; E-COMMERCE &nbsp;&bull;&nbsp; TVORBA WEBŮ &nbsp;&bull;&nbsp; MARKETING &nbsp;&bull;&nbsp; ANALYTIKA &nbsp;&bull;&nbsp; UGC &nbsp;&bull;&nbsp; PRICING &nbsp;&bull;&nbsp; AI &nbsp;&bull;&nbsp; AUTOMATIZACE &nbsp;&bull;&nbsp; E-COMMERCE &nbsp;&bull;&nbsp; TVORBA WEBŮ &nbsp;&bull;&nbsp; MARKETING &nbsp;&bull;&nbsp; ANALYTIKA &nbsp;&bull;&nbsp; UGC &nbsp;&bull;&nbsp; PRICING &nbsp;&bull;&nbsp;</span>
+    </div>
+</div>
+
 <!-- Portfolio preview — desktop + mobile side by side -->
-<section class="py-28 bg-brand-950/50">
+<section class="py-32 bg-brand-950/50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-20 reveal">
             <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Portfolio</p>
@@ -152,7 +166,7 @@
                         <img src="{{ url_for('static', filename='portfolio/fort_mobile.png') }}" alt="Autoservis Fořt - mobil" class="portfolio-img portfolio-mobile w-full aspect-[9/16] object-cover object-top">
                     </div>
                 </div>
-                <h3 class="font-bold text-lg mb-1">Autoservis Fořt v8</h3>
+                <h3 class="font-bold text-lg mb-1">Autoservis Fořt</h3>
                 <p class="text-gray-400 text-sm mb-1">Autoservis a pneuservis</p>
                 <p class="text-purple-400/60 text-xs">Plně responzivní na všech zařízeních</p>
             </div>
@@ -165,7 +179,7 @@
 </section>
 
 <!-- About + Stats -->
-<section class="py-28">
+<section class="py-32">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal-left">
@@ -205,7 +219,7 @@
 </section>
 
 <!-- CTA -->
-<section class="py-28 relative overflow-hidden">
+<section class="py-32 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-indigo-900/20"></div>
     <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
         <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Máte projekt na mysli?</h2>
