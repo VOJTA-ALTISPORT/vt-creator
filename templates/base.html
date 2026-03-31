@@ -6,9 +6,10 @@
     <title>{% block title %}Vojtěch Titlbach | AI & Digitální konzultant{% endblock %}</title>
     <meta name="description" content="{% block meta_desc %}AI konzultace, e-commerce strategie a tvorba webů. Pomáhám firmám růst s využitím AI a dat.{% endblock %}">
     <meta property="og:title" content="Vojtěch Titlbach | AI & Digitální konzultant">
-    <meta property="og:image" content="{{ url_for('static', filename='logo.png') }}">
+    <meta property="og:image" content="{{ url_for('static', filename='logo_white.png') }}">
     <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
