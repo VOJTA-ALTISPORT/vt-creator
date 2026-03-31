@@ -249,7 +249,7 @@
     <img src="{{ url_for('static', filename='hero-bg.png') }}" alt="" class="hero-watermark" aria-hidden="true">
 
     <!-- Navigation -->
-    <nav class="fixed top-[3px] w-full z-50 nav-blur bg-brand-900/80">
+    <nav class="fixed top-[3px] w-full z-50 nav-blur bg-brand-900/95 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="{{ url_for('index') }}" class="flex items-center gap-3">
                 <img src="{{ url_for('static', filename='logo_white.png') }}" alt="VT" class="logo-img">
@@ -274,7 +274,7 @@
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-brand-900/98 flex flex-col items-center justify-center gap-8 md:hidden">
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-brand-950 flex flex-col items-center justify-center gap-8 md:hidden" style="background: #080808;">
         <button class="absolute top-5 right-6 text-white" onclick="document.getElementById('mobileMenu').classList.remove('open')">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
