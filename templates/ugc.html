@@ -46,8 +46,14 @@
             </div>
             <div class="reveal-right delay-2">
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="{{ url_for('static', filename='photo-sport.jpg') }}" alt="Sport" class="rounded-2xl w-full aspect-[3/4] object-cover">
-                    <img src="{{ url_for('static', filename='photo-sushi.jpg') }}" alt="Food" class="rounded-2xl w-full aspect-[3/4] object-cover mt-8">
+                    <div class="card-hover bg-brand-800/50 rounded-xl p-6 text-center">
+                        <p class="text-3xl font-black text-purple-400 mb-2">3 000 Kč</p>
+                        <p class="text-gray-400 text-sm">1 video</p>
+                    </div>
+                    <div class="card-hover bg-brand-800/50 rounded-xl p-6 text-center">
+                        <p class="text-3xl font-black text-purple-400 mb-2">7 000 Kč</p>
+                        <p class="text-gray-400 text-sm">3 videa</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,12 +117,7 @@
             <h2 class="text-4xl font-bold gradient-text">Ukázky obsahu</h2>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal mb-16">
-            <img src="{{ url_for('static', filename='photo-sport.jpg') }}" alt="Sport content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
-            <img src="{{ url_for('static', filename='photo-travel.jpg') }}" alt="Travel content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
-            <img src="{{ url_for('static', filename='photo-sushi.jpg') }}" alt="Food content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
-            <img src="{{ url_for('static', filename='photo-cycling.jpg') }}" alt="Cycling content" class="rounded-2xl w-full aspect-square object-cover portfolio-img">
-        </div>
+        <!-- Video ukázky jsou níže -->
 
         <!-- YouTube Shorts -->
         <div class="text-center mb-10 reveal">
@@ -244,6 +245,40 @@
                 <p class="text-lg font-bold mb-1">Každý hook navíc</p>
                 <p class="text-gray-400 text-sm mb-2">Potřebujete více variant úvodního záběru? Žádný problém.</p>
                 <p class="text-2xl font-black gradient-text-accent">+500 Kč</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kdo jsem -->
+<section class="py-32 bg-brand-950/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+            <p class="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">Kdo jsem</p>
+            <h2 class="text-4xl font-bold gradient-text">Vojtěch Titlbach</h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal-left">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Tvořím autentický video obsah pro značky a e-shopy. Jako COO ve společnosti Altisport (7 trhů v EU) rozumím, jaký obsah skutečně funguje z pohledu konverzí a prodejů.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Specializuji se na sportovní a lifestyle obsah. Miluji běh, cyklistiku, cestování a dobré jídlo — a přesně tohle se promítá do mých videí. Mám i pejska Sushi (Shiba Inu), který na přání rád vystoupí před kamerou.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-brand-800/50 text-gray-300 px-3 py-1 rounded-full text-xs">Sport & Outdoor</span>
+                    <span class="bg-brand-800/50 text-gray-300 px-3 py-1 rounded-full text-xs">Cestování</span>
+                    <span class="bg-brand-800/50 text-gray-300 px-3 py-1 rounded-full text-xs">Lifestyle</span>
+                    <span class="bg-brand-800/50 text-gray-300 px-3 py-1 rounded-full text-xs">Food & Gastro</span>
+                </div>
+            </div>
+            <div class="reveal-right delay-2">
+                <div class="grid grid-cols-2 gap-3">
+                    <img src="{{ url_for('static', filename='photo-sport.jpg') }}" alt="Sport" class="rounded-2xl w-full aspect-square object-cover">
+                    <img src="{{ url_for('static', filename='photo-travel.jpg') }}" alt="Cestování" class="rounded-2xl w-full aspect-square object-cover">
+                    <img src="{{ url_for('static', filename='photo-sushi.jpg') }}" alt="Sushi" class="rounded-2xl w-full aspect-square object-cover">
+                    <img src="{{ url_for('static', filename='photo-cycling.jpg') }}" alt="Cyklistika" class="rounded-2xl w-full aspect-square object-cover">
+                </div>
             </div>
         </div>
     </div>
